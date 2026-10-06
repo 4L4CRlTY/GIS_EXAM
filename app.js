@@ -4,7 +4,7 @@
   const pages = {
     page1: {name: 'Page 1', title: 'GIS introduction & hardware', storage: 'gis-study-club-page1-scope-v6', description: 'GIS introduction, the five component names, and hardware categories.'},
     page2: {name: 'Page 2', title: 'Software, People, Methods & Data', storage: 'gis-study-club-page2-keynotes-v2', description: 'Software, People, Methods, and Data.', topics: ['Software & GUI', 'People', 'Methods', 'Data & sources']},
-    page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-enumeration-v2', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']}
+    page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-tasks-v3', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']}
   };
   let activePage = 'page1';
   let bank = banks[activePage];

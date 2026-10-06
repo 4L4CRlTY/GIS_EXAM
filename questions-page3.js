@@ -47,5 +47,12 @@
     terms: [{name: 'Mapping'}, {name: 'Measurement'}, {name: 'Monitoring'}, {name: 'Modelling', aliases: ['Modeling']}, {name: 'Management'}],
     explanation: 'Mapping shows where; Measurement determines distance and area; Monitoring examines conditions and changes; Modelling represents a phenomenon or system; Management handles geographic information. Any order is accepted. All five different functions must be correct to earn one point.'
   });
+  bank.push({
+    id: 'p3-e2', type: 'enum', topic: 'Management tasks', entryLabel: 'Task', missingLabel: 'tasks',
+    prompt: 'What are the five main tasks of GIS management?',
+    answer: 'Input, Manipulation, Query, Analysis, Visualization',
+    terms: [{name: 'Input', aliases: ['Data input']}, {name: 'Manipulation', aliases: ['Data manipulation']}, {name: 'Query'}, {name: 'Analysis', aliases: ['Data analysis']}, {name: 'Visualization', aliases: ['Visualisation', 'Data visualization', 'Data visualisation']}],
+    explanation: 'Input enters data; Manipulation modifies or prepares data; Query retrieves matching information; Analysis examines patterns and relationships; Visualization presents information visually. Any order is accepted for this list. All five different tasks must be correct to earn one point.'
+  });
   window.GIS_PAGE3_QUESTIONS = bank;
 })();
