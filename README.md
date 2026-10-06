@@ -8,7 +8,7 @@ Keep all files together, then double-click `index.html` to open it in your brows
 
 ## Quiz flow
 
-1. Choose Page 1, Page 2, or Page 3. Questions, retries, study notes, and saved scores stay separate. Then choose Quick refresh or Full review.
+1. Choose Page 1, Page 2, Page 3, or Page 4. Questions, retries, study notes, and saved scores stay separate. Then choose Quick refresh or Full review.
 2. Select or type your answer.
 3. Click **Next** to reveal the correct answer and explanation. Your answer is locked for that question.
 4. Read the explanation, then click **Continue** for the next question.
@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -68,3 +68,9 @@ Identification uses short terms, with Modeling/Modelling and Visualization/Visua
 ## Management-task enumeration
 
 Page 3 also asks for Input, Manipulation, Query, Analysis, and Visualization in five separate boxes labelled Task 1–5. Any order is accepted. Visualisation and the supported Data-prefixed terms are accepted, but repeated terms or aliases do not count twice. All five different tasks earn one point; Next shows each entry’s result, the full correct list, and missing tasks. Both Page 3 enumeration questions are always included in quick and full review, and repeated in mistake practice when missed.
+
+## Page 4: GIS Applications
+
+Page 4 contains 36 questions based on the supplied applications page and keynotes: 12 identification, 12 true/false, and 12 multiple choice. Quick refresh has 15 questions. Topics are Location, Condition, Trend, Routing, Pattern, and Model; the three regular GIS tasks; application areas; and GIS in schools. Location asks what is at a known place; Condition finds places meeting requirements. Model is used as the question-type name, keeping it distinct from the Page 3 function Modelling. The source phrase special patterns is taught as spatial patterns, as clarified in the supplied keynotes.
+
+Questions use the instructor’s description and scenario pattern, with short typed answers and longer answers/lists as multiple choice. No enumeration or multiple inputs are added. Page 4 has its own notes, questions, retry pool, and browser statistics. Existing page banks and statistics keys are preserved.

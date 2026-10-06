@@ -1,10 +1,11 @@
 (() => {
   'use strict';
-  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS, page3: window.GIS_PAGE3_QUESTIONS};
+  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS, page3: window.GIS_PAGE3_QUESTIONS, page4: window.GIS_PAGE4_QUESTIONS};
   const pages = {
     page1: {name: 'Page 1', title: 'GIS introduction & hardware', storage: 'gis-study-club-page1-scope-v6', description: 'GIS introduction, the five component names, and hardware categories.'},
     page2: {name: 'Page 2', title: 'Software, People, Methods & Data', storage: 'gis-study-club-page2-keynotes-v2', description: 'Software, People, Methods, and Data.', topics: ['Software & GUI', 'People', 'Methods', 'Data & sources']},
-    page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-tasks-v3', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']}
+    page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-tasks-v3', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']},
+    page4: {name: 'Page 4', title: 'GIS Applications', storage: 'gis-study-club-page4-v1', description: 'Six GIS question types, regular GIS tasks, application areas, and GIS in schools.', topics: ['Six question types', 'Regular GIS tasks', 'Application areas', 'GIS in schools']}
   };
   let activePage = 'page1';
   let bank = banks[activePage];
