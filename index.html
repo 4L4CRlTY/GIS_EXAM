@@ -6,15 +6,16 @@
   <meta name="theme-color" content="#403acb">
   <meta name="description" content="Practice GIS lessons with separate quizzes on Introduction to GIS and Data and Information.">
   <title>GIS Study Club — Lesson 2 Practice</title>
-  <link rel="stylesheet" href="./styles.css?v=lesson3-types-19">
-  <script defer src="./quiz-utils.js?v=lesson3-types-19"></script>
-  <script defer src="./questions.js?v=lesson3-types-19"></script>
-  <script defer src="./questions-page2.js?v=lesson3-types-19"></script>
-  <script defer src="./questions-page3.js?v=lesson3-types-19"></script>
-  <script defer src="./questions-page4.js?v=lesson3-types-19"></script>
-  <script defer src="./questions-lesson3-page1.js?v=lesson3-types-19"></script>
-  <script defer src="./questions-lesson3-page2.js?v=lesson3-types-19"></script>
-  <script defer src="./app.js?v=lesson3-types-19"></script>
+  <link rel="stylesheet" href="./styles.css?v=lesson3-raster-20">
+  <script defer src="./quiz-utils.js?v=lesson3-raster-20"></script>
+  <script defer src="./questions.js?v=lesson3-raster-20"></script>
+  <script defer src="./questions-page2.js?v=lesson3-raster-20"></script>
+  <script defer src="./questions-page3.js?v=lesson3-raster-20"></script>
+  <script defer src="./questions-page4.js?v=lesson3-raster-20"></script>
+  <script defer src="./questions-lesson3-page1.js?v=lesson3-raster-20"></script>
+  <script defer src="./questions-lesson3-page2.js?v=lesson3-raster-20"></script>
+  <script defer src="./questions-lesson3-page3.js?v=lesson3-raster-20"></script>
+  <script defer src="./app.js?v=lesson3-raster-20"></script>
 </head>
 <body>
   <header class="topbar"><a class="brand" href="./index.html" aria-label="GIS Study Club home"><span class="brand-icon" aria-hidden="true">◎</span> GIS <span class="brand-light">Study Club</span></a><span class="top-label">YOUR PERSONAL REVIEW SPACE</span></header>
@@ -41,6 +42,7 @@
         <fieldset class="page-options"><legend>Lesson 3 · Data and Information</legend>
           <label><input type="radio" name="study-page" value="lesson3page1"><span><strong>Lesson 3 · Page 1</strong><small>Data and Information</small></span></label>
           <label><input type="radio" name="study-page" value="lesson3page2"><span><strong>Lesson 3 · Page 2</strong><small>GIS Data Types and Data Values</small></span></label>
+          <label><input type="radio" name="study-page" value="lesson3page3"><span><strong>Lesson 3 · Page 3</strong><small>Data Models and Raster Data</small></span></label>
         </fieldset><p id="page-description" class="muted"></p>
         <div class="format-row"><span>◉ Multiple choice</span><span id="tf-format">◐ True or false</span><span id="fill-format">▤ Identification</span><span id="enumeration-format">≡ Enumeration</span></div>
         <section class="setup-card" aria-labelledby="setup-title">
@@ -132,6 +134,18 @@
     <p><strong>Why data type matters:</strong> it determines which mathematical operations and analyses are meaningful. A postal code helps identify a location, but is a nominal identifier, not a measurable quantity.</p>
     <p><strong>Practice:</strong> 26 questions: 8 identification, 6 true/false, and 12 multiple choice. Quick refresh has 15 questions. Longer answers use multiple choice.</p>
     <p><small>Measurement-scale reference: <a href="https://pro.arcgis.com/en/pro-app/3.5/help/analysis/spatial-analyst/performing-analysis/values-and-what-they-represent.htm" target="_blank" rel="noopener noreferrer">Esri: Measurement systems</a>.</small></p>
+  </template>
+  <template id="lesson3page3-notes">
+    <p><strong>Data model:</strong> a set of rules or constructs used to describe and represent aspects of the real world in a computer. The two primary geographic data models are <strong>raster and vector</strong>.</p>
+    <p><strong>Raster:</strong> geographic features stored in a grid of cells or pixels. The grid consists of rows and columns of equally sized pixels that together form a surface.</p>
+    <p><strong>Building blocks:</strong> pixels can represent points, lines, areas, networks, and surfaces. <strong>Memory cue: Raster = rows and columns of pixels.</strong></p>
+    <p><strong>Same scene, different representation:</strong> raster uses a grid; vector uses coordinate-based points, lines, and polygons. A river can be shown as a chain of raster cells or as connected vector line segments. The illustration shows a house in a raster cell and as a vector point.</p>
+    <p><strong>Raster image formats:</strong> JPEG, BMP, and TIFF. <strong>LCD monitors</strong> use raster technology because their displays consist of rows and columns of pixels.</p>
+    <p><strong>Three advantages of raster data:</strong></p>
+    <ul><li><strong>Easy overlaying:</strong> place layers over one another for comparison or analysis.</li><li><strong>Variability is well represented:</strong> cell values show differences across an area.</li><li><strong>Easy to understand:</strong> the grid structure is straightforward.</li></ul>
+    <p><strong>Three disadvantages of raster data:</strong></p>
+    <ul><li><strong>Not a compact data structure:</strong> many cells can require substantial storage.</li><li><strong>Connective relationships are difficult to represent:</strong> connections, such as how roads join, are harder to describe directly.</li><li><strong>Blocky appearance:</strong> grid cells can make boundaries look stepped rather than smooth.</li></ul>
+    <p><strong>Practice:</strong> 22 questions: 5 identification, 6 true/false, and 11 multiple choice. Quick refresh has 15 questions. Longer answers and lists use multiple choice.</p>
   </template>
   <noscript>Please enable JavaScript to use this quiz.</noscript>
 </body>

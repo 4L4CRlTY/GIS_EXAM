@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `questions-lesson3-page2.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `questions-lesson3-page2.js`, `questions-lesson3-page3.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -88,3 +88,9 @@ The sidebar updates to Lesson 03 and Data and Information. Questions, notes, ret
 Separate 26-question bank: 8 identification, 6 true/false, 12 multiple choice. Quick refresh selects 5 of each type (15). Covers spatial/attribute/image data, N–O–I–R, binary states, and the geographic-distribution associations in the supplied diagram. Short-answer synonyms include geographic/spatial and non-spatial/attribute. No enumeration is added. Notes, retries, and statistics use their own page and storage key.
 
 Follows the user’s corrected keynotes: Celsius is interval; elapsed age is ratio. The notes explicitly explain the handout discrepancy. Diagram associations are distinguished from measurement levels. Existing lessons remain unchanged.
+
+## Lesson 3 · Page 3: Data Models and Raster Data
+
+Separate 22-question bank: 5 identification, 6 true/false, 11 multiple choice. Quick refresh has 15 questions. Covers the definition of a data model, raster versus vector as illustrated, rows/columns/pixels, JPEG/BMP/TIFF, LCD displays, and the three raster advantages and disadvantages. Vector detail beyond the supplied comparison is reserved for later pages.
+
+Short terms accept useful synonyms (cells/pixels, raster/raster data model). Lists and longer answers are multiple choice; no enumeration is added. Questions, notes, retries, and saved scores stay separate from all previous pages. Next reveals the answer; total score appears at the end.
