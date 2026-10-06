@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `questions-lesson3-page2.js`, `questions-lesson3-page3.js`, `questions-lesson3-page4.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `questions-lesson3-page2.js`, `questions-lesson3-page3.js`, `questions-lesson3-page4.js`, `questions-lesson3-page5.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -100,3 +100,9 @@ Short terms accept useful synonyms (cells/pixels, raster/raster data model). Lis
 Separate 24-question bank: 8 identification, 6 true/false, 10 multiple choice. Quick refresh has 15 questions. Based on the supplied vector page and pasted keynotes: coordinates, vertices, points/lines/polygons, examples and dimensions, topology, advantages/disadvantages, raster comparison, and pixelation. Longer answers and lists use multiple choice. No enumeration is added.
 
 Question wording distinguishes geometry from display symbols and avoids claiming vector automatically guarantees accuracy or cannot represent terrain. Questions, notes, retries, and browser statistics are separate from previous pages. Next reveals the answer; total score appears only at the end.
+
+## Lesson 3 · Page 5: Metadata
+
+Separate 22-question bank: 5 identification, 6 true/false, 11 multiple choice. Quick refresh has 15 questions. Covers data about data, metadata details, 5W + H, benefits, currency versus cost, collector versus owner, storage, and early planning through standard procedures and project budgets. Based only on the supplied metadata page and keynotes.
+
+Short terms use identification; lists and longer answers use multiple choice. No enumeration is added. Questions, notes, retries, and browser statistics stay separate. Next reveals each answer; total score appears only at the end.
