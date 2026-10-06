@@ -8,7 +8,7 @@ Keep all files together, then double-click `index.html` to open it in your brows
 
 ## Quiz flow
 
-1. Choose Quick refresh (15 questions: five of each type) or Full review (30 questions: 15 identification, 9 true/false, and 6 multiple choice).
+1. Choose Quick refresh (16 questions: five of each original type plus enumeration) or Full review (31 questions: 15 identification, 9 true/false, 6 multiple choice, and 1 enumeration).
 2. Select or type your answer.
 3. Click **Next** to reveal the correct answer and explanation. Your answer is locked for that question.
 4. Read the explanation, then click **Continue** for the next question.
@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `app.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -46,6 +46,10 @@ The bank in `questions.js` follows the instructor's pattern: a short definition 
 - Routing is not accepted for Transportation, and GIS is not accepted for Disaster Management: the question asks for an application area.
 - Correctness feedback is based on the answer key, not the inconsistent “Incorrect” wording shown under some correctly answered false statements in the reference images.
 
-Each question has a unique ID, topic, answer, and explanation. Quick mode selects five per type. Update the homepage counts and full-review radio value if changing the bank size.
+Each question has a unique ID, topic, answer, and explanation. Quick mode selects five of each original type and always includes the five-component enumeration question. Update the homepage counts and full-review radio value if changing the bank size.
 
 This bank uses separate browser statistics, leaving earlier versions' records untouched. These are practice questions based on supplied material, not a prediction of a future exam.
+
+## Five-component enumeration
+
+Enter Hardware, Software, People, Data, and Methods in five separate boxes, in any order. Methods/applications and Applications are also accepted for Methods. Case, punctuation, and extra spaces are ignored. Repeated components do not count twice. At least one answer is required; unknown answers may be left blank. Clicking Next locks all boxes, labels each answer, and shows the full correct list and any missing components. All five different components must be correct to earn the question's one point (no partial points). The total score still appears only at the end. Mistake practice includes this question if incomplete or incorrect. This version keeps separate statistics so earlier scores remain untouched.

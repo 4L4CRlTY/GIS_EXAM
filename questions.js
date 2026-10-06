@@ -43,5 +43,13 @@
   mc('m4','GIS functions','The GIS function used to predict possible future conditions.','Modelling',['Monitoring','Measurement','Management'],'Modelling explores possible conditions; monitoring observes changes.');
   mc('m5','GIS applications','The GIS application used to plan routes and study traffic.','Transportation',['Agriculture','Disaster Management','Public Health'],'Transportation is the application area. Routing is one of its tasks.');
   mc('m6','GIS applications','The GIS application used to identify flood and landslide hazards.','Disaster Management',['Transportation','Agriculture','Real Estate'],'Disaster Management uses hazard information to support preparedness and response.');
+  questions.push({
+    id: 'e1', type: 'enum', sourceQuestion: null, topic: 'GIS components',
+    prompt: 'What are the five main components of GIS?',
+    answer: 'Hardware, Software, People, Data, Methods',
+    terms: [{name: 'Hardware'}, {name: 'Software'}, {name: 'People'}, {name: 'Data'},
+      {name: 'Methods', aliases: ['method', 'applications', 'methods/applications', 'methods and applications', 'methods or applications']}],
+    explanation: 'Hardware = equipment; software = programs; people = users; data = information; methods = procedures. Any order is accepted. This question earns one point when all five different components are correct.'
+  });
   window.GIS_QUESTIONS = questions;
 })();
