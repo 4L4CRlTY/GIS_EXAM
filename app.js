@@ -1,11 +1,12 @@
 (() => {
   'use strict';
-  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS, page3: window.GIS_PAGE3_QUESTIONS, page4: window.GIS_PAGE4_QUESTIONS};
+  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS, page3: window.GIS_PAGE3_QUESTIONS, page4: window.GIS_PAGE4_QUESTIONS, lesson3page1: window.GIS_LESSON3_PAGE1_QUESTIONS};
   const pages = {
     page1: {name: 'Page 1', title: 'GIS introduction & hardware', storage: 'gis-study-club-page1-scope-v6', description: 'GIS introduction, the five component names, and hardware categories.'},
     page2: {name: 'Page 2', title: 'Software, People, Methods & Data', storage: 'gis-study-club-page2-keynotes-v2', description: 'Software, People, Methods, and Data.', topics: ['Software & GUI', 'People', 'Methods', 'Data & sources']},
     page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-tasks-v3', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']},
-    page4: {name: 'Page 4', title: 'GIS question types & tasks', storage: 'gis-study-club-page4-mc-v3', quickCount: 15, description: 'Six GIS question types and three regular GIS tasks. All questions are multiple choice.', topics: ['Six question types', 'Location vs. Condition', 'Three regular GIS tasks']}
+    page4: {name: 'Page 4', title: 'GIS question types & tasks', storage: 'gis-study-club-page4-mc-v3', quickCount: 15, description: 'Six GIS question types and three regular GIS tasks. All questions are multiple choice.', topics: ['Six question types', 'Location vs. Condition', 'Three regular GIS tasks']},
+    lesson3page1: {name: 'Lesson 3 · Page 1', lesson: 3, lessonTitle: 'Data and Information', title: 'Data and Information', storage: 'gis-study-club-lesson3-page1-v1', description: 'Data vs. information, datum vs. data, mapping changes, computers, and the path from data to action.', topics: ['Data vs. information', 'Datum vs. data', 'Mapping & computers', 'From data to action']}
   };
   let activePage = 'page1';
   let bank = banks[activePage];
@@ -139,6 +140,9 @@
     activePage = page;
     bank = banks[page];
     const config = pages[page];
+    $('lesson-number').textContent = String(config.lesson || 2).padStart(2, '0');
+    $('lesson-title').textContent = config.lessonTitle || 'Introduction to GIS';
+    document.title = 'GIS Study Club — Lesson ' + (config.lesson || 2) + ' Practice';
     storageKey = config.storage;
     const enums = bank.filter(q => q.type === 'enum').length;
     const multipleChoiceOnly = bank.every(q => q.type === 'mc');

@@ -1,6 +1,6 @@
 # GIS Study Club
 
-A repeatable quiz based on the supplied Lesson 2 notes, with question wording modelled on the instructor examples. Built with plain HTML, CSS, and JavaScript. No installation, build process, external fonts, or accounts are required.
+A repeatable quiz based on the supplied Lesson 2 and Lesson 3 notes, with question wording modelled on the instructor examples. Built with plain HTML, CSS, and JavaScript. No installation, build process, external fonts, or accounts are required.
 
 ## Open locally
 
@@ -8,7 +8,7 @@ Keep all files together, then double-click `index.html` to open it in your brows
 
 ## Quiz flow
 
-1. Choose Page 1, Page 2, Page 3, or Page 4. Questions, retries, study notes, and saved scores stay separate. Then choose Quick refresh or Full review.
+1. Choose a page under Lesson 2 or Lesson 3. Questions, retries, study notes, and saved scores stay separate. Then choose Quick refresh or Full review.
 2. Select or type your answer.
 3. Click **Next** to reveal the correct answer and explanation. Your answer is locked for that question.
 4. Read the explanation, then click **Continue** for the next question.
@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -76,3 +76,9 @@ Page 4 is restricted to the user's two selected topics: the six GIS question typ
 The focused bank has 18 multiple-choice questions, each with four options. Quick refresh has 15 questions. Location asks what is at a known place; Condition finds places meeting requirements. Model is the question-type name. The source phrase special patterns is taught as spatial patterns, as clarified in the supplied keynotes.
 
 Questions retain the instructor's description and scenario pattern. All Page 4 questions use multiple choice, with no identification, true/false, or multiple-input questions. Quick refresh selects 15 shuffled items; full review uses all 18. The Page 4 format labels and result breakdown show multiple choice only. Page 4 has separate notes, questions, retries, and a new statistics key so scores from earlier Page 4 versions are not mixed with this focused bank. Earlier browser records and the other three pages remain unchanged.
+
+## Lesson 3 · Page 1: Data and Information
+
+A separate lesson group opens this 24-question bank: 6 identification, 8 true/false, and 10 multiple choice. Quick refresh has 15 questions. The content follows only the supplied first page of Lesson 3: data and information, datum/data, GIS foundations, the data-to-action cycle, analog-to-digital mapping, democratization, and benefits of computers. Later Lesson 3 topics such as data types, raster/vector models, and metadata are not included.
+
+The sidebar updates to Lesson 03 and Data and Information. Questions, notes, retries, and browser statistics are separate from Lesson 2; existing question banks and storage keys stay unchanged. Short terms use identification; long answers use multiple choice. No enumeration is added. Next reveals each answer and explanation; the total score appears only at the end.
