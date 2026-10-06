@@ -4,7 +4,7 @@
   const pages = {
     page1: {name: 'Page 1', title: 'GIS introduction & hardware', storage: 'gis-study-club-page1-scope-v6', description: 'GIS introduction, the five component names, and hardware categories.'},
     page2: {name: 'Page 2', title: 'Software, People, Methods & Data', storage: 'gis-study-club-page2-keynotes-v2', description: 'Software, People, Methods, and Data.', topics: ['Software & GUI', 'People', 'Methods', 'Data & sources']},
-    page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-v1', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']}
+    page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-enumeration-v2', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']}
   };
   let activePage = 'page1';
   let bank = banks[activePage];
@@ -149,7 +149,7 @@
     $('bank-count').textContent = bank.length + ' questions · ' + config.name;
     $('page-description').textContent = config.name + ': ' + config.description + ' Questions stay within this topic.';
     $('study-label').textContent = config.name + ' · ' + config.title;
-    $('setup-note').textContent = enums ? 'All ' + enums + ' enumeration questions are included in each round. No timer.' : 'Identification, true or false, and multiple choice. No timer.';
+    $('setup-note').textContent = enums ? (enums === 1 ? 'The enumeration question is included in each round.' : 'All ' + enums + ' enumeration questions are included in each round.') + ' No timer.' : 'Identification, true or false, and multiple choice. No timer.';
     $('enumeration-format').hidden = !enums;
     $('study-topics').innerHTML = config.topics ? config.topics.map((topic, i) => `<p><span>0${i + 1}</span> ${escape(topic)}</p>`).join('') : firstPageTopics;
     $('study-notes').innerHTML = page === 'page1' ? firstPageNotes : $(page + '-notes').innerHTML;

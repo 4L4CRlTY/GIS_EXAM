@@ -40,5 +40,12 @@
   mc('m10','GIS limitations','The two factors that limit what GIS can do.','Availability of data and functions of the specific software package',['Number of map colors and size of map titles','Order of the layers and names of the users','Number of management tasks and spelling of project names'],'GIS needs suitable data and software functions to carry out the required work.');
   mc('m11','Geographic layers','The group that contains examples of geographic information layers.','Customers, streets, parcels, elevation, land usage',['Input, manipulation, query, analysis, visualization','Mapping, measurement, monitoring, modelling, management','Goals, needs, outputs, limitations, procedures'],'Geographic information can be represented as separate layers for these features or characteristics.');
   mc('m12','Project goals','The main work a GIS project may require when little or no analysis is needed.','Data capture and presentation',['Removal of all geographic data','Use of every software function','Analysis without any expected output'],'Some projects focus on capturing and presenting data, depending on their goals.');
+  bank.push({
+    id: 'p3-e1', type: 'enum', topic: 'The 5 Ms of GIS', entryLabel: 'Function', missingLabel: 'functions',
+    prompt: 'What are the five main functions of GIS (the 5 Ms)?',
+    answer: 'Mapping, Measurement, Monitoring, Modelling, Management',
+    terms: [{name: 'Mapping'}, {name: 'Measurement'}, {name: 'Monitoring'}, {name: 'Modelling', aliases: ['Modeling']}, {name: 'Management'}],
+    explanation: 'Mapping shows where; Measurement determines distance and area; Monitoring examines conditions and changes; Modelling represents a phenomenon or system; Management handles geographic information. Any order is accepted. All five different functions must be correct to earn one point.'
+  });
   window.GIS_PAGE3_QUESTIONS = bank;
 })();
