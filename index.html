@@ -6,14 +6,15 @@
   <meta name="theme-color" content="#403acb">
   <meta name="description" content="Practice GIS lessons with separate quizzes on Introduction to GIS and Data and Information.">
   <title>GIS Study Club — Lesson 2 Practice</title>
-  <link rel="stylesheet" href="./styles.css?v=lesson3-data-18">
-  <script defer src="./quiz-utils.js?v=lesson3-data-18"></script>
-  <script defer src="./questions.js?v=lesson3-data-18"></script>
-  <script defer src="./questions-page2.js?v=lesson3-data-18"></script>
-  <script defer src="./questions-page3.js?v=lesson3-data-18"></script>
-  <script defer src="./questions-page4.js?v=lesson3-data-18"></script>
-  <script defer src="./questions-lesson3-page1.js?v=lesson3-data-18"></script>
-  <script defer src="./app.js?v=lesson3-data-18"></script>
+  <link rel="stylesheet" href="./styles.css?v=lesson3-types-19">
+  <script defer src="./quiz-utils.js?v=lesson3-types-19"></script>
+  <script defer src="./questions.js?v=lesson3-types-19"></script>
+  <script defer src="./questions-page2.js?v=lesson3-types-19"></script>
+  <script defer src="./questions-page3.js?v=lesson3-types-19"></script>
+  <script defer src="./questions-page4.js?v=lesson3-types-19"></script>
+  <script defer src="./questions-lesson3-page1.js?v=lesson3-types-19"></script>
+  <script defer src="./questions-lesson3-page2.js?v=lesson3-types-19"></script>
+  <script defer src="./app.js?v=lesson3-types-19"></script>
 </head>
 <body>
   <header class="topbar"><a class="brand" href="./index.html" aria-label="GIS Study Club home"><span class="brand-icon" aria-hidden="true">◎</span> GIS <span class="brand-light">Study Club</span></a><span class="top-label">YOUR PERSONAL REVIEW SPACE</span></header>
@@ -39,6 +40,7 @@
         </fieldset>
         <fieldset class="page-options"><legend>Lesson 3 · Data and Information</legend>
           <label><input type="radio" name="study-page" value="lesson3page1"><span><strong>Lesson 3 · Page 1</strong><small>Data and Information</small></span></label>
+          <label><input type="radio" name="study-page" value="lesson3page2"><span><strong>Lesson 3 · Page 2</strong><small>GIS Data Types and Data Values</small></span></label>
         </fieldset><p id="page-description" class="muted"></p>
         <div class="format-row"><span>◉ Multiple choice</span><span id="tf-format">◐ True or false</span><span id="fill-format">▤ Identification</span><span id="enumeration-format">≡ Enumeration</span></div>
         <section class="setup-card" aria-labelledby="setup-title">
@@ -116,6 +118,20 @@
     <p><strong>Computers:</strong> not required to collect, record, manipulate, process, or visualize data, or turn data into information. Information technology makes these tasks easier.</p>
     <ul><li>Automate repetitive tasks.</li><li>Store data efficiently in terms of space and cost.</li><li>Provide analysis tools, from spreadsheets to GIS.</li></ul>
     <p><strong>Lesson 3 · Page 1 practice:</strong> 24 questions: 6 identification, 8 true/false, and 10 multiple choice. Quick refresh has 15 questions. Long answers use multiple choice. No multiple-input questions are included.</p>
+  </template>
+  <template id="lesson3page2-notes">
+    <p><strong>Spatial / geographic data:</strong> define where an object is located on Earth. Examples: a street address, nearby street names, a postal code, and latitude/longitude. Spatial = where?</p>
+    <p><strong>Non-spatial / non-geographic / attribute data:</strong> describe traits or characteristics. Examples: bedrooms, bathrooms, occupants, year built, central heating, or a swimming pool. Attribute = what characteristics?</p>
+    <p><strong>Image data:</strong> satellite images, aerial photographs, and scanned maps.</p>
+    <p><strong>N–O–I–R:</strong> Nominal → Ordinal → Interval → Ratio.</p>
+    <ul><li><strong>Nominal:</strong> names or categories without ranking, such as residential, agricultural, and commercial land use.</li><li><strong>Ordinal:</strong> ranked categories such as low, average, and high. Gaps are not necessarily equal.</li><li><strong>Interval:</strong> equal intervals but no true zero. Example: temperature in °C. Differences are meaningful, but ratios of values are not.</li><li><strong>Ratio:</strong> equal intervals and a true zero. Examples: length, area, elapsed age, and number of occupants. Differences and ratios are meaningful.</li></ul>
+    <p><strong>Compare:</strong> 20 metres is twice 10 metres, but 20°C is not twice as hot as 10°C.</p>
+    <p><strong>Correction from your keynotes:</strong> the handout lists age under interval. Age measured as elapsed time since birth is ratio data because it has a meaningful zero. This quiz uses that corrected classification and Celsius as the clear interval example.</p>
+    <p><strong>Binary:</strong> two possible states, such as present/absent or yes/no. The lesson diagram uses 0 = no and 1 = yes.</p>
+    <p><strong>Geographic distribution in the lesson diagram:</strong> choropleth is associated with sharp boundaries between areas; isopleth with a continuous gradient, illustrated by elevation. These are diagram associations, not additional N–O–I–R measurement levels.</p>
+    <p><strong>Why data type matters:</strong> it determines which mathematical operations and analyses are meaningful. A postal code helps identify a location, but is a nominal identifier, not a measurable quantity.</p>
+    <p><strong>Practice:</strong> 26 questions: 8 identification, 6 true/false, and 12 multiple choice. Quick refresh has 15 questions. Longer answers use multiple choice.</p>
+    <p><small>Measurement-scale reference: <a href="https://pro.arcgis.com/en/pro-app/3.5/help/analysis/spatial-analyst/performing-analysis/values-and-what-they-represent.htm" target="_blank" rel="noopener noreferrer">Esri: Measurement systems</a>.</small></p>
   </template>
   <noscript>Please enable JavaScript to use this quiz.</noscript>
 </body>

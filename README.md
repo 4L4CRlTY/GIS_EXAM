@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `questions-lesson3-page2.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -82,3 +82,9 @@ Questions retain the instructor's description and scenario pattern. All Page 4 q
 A separate lesson group opens this 24-question bank: 6 identification, 8 true/false, and 10 multiple choice. Quick refresh has 15 questions. The content follows only the supplied first page of Lesson 3: data and information, datum/data, GIS foundations, the data-to-action cycle, analog-to-digital mapping, democratization, and benefits of computers. Later Lesson 3 topics such as data types, raster/vector models, and metadata are not included.
 
 The sidebar updates to Lesson 03 and Data and Information. Questions, notes, retries, and browser statistics are separate from Lesson 2; existing question banks and storage keys stay unchanged. Short terms use identification; long answers use multiple choice. No enumeration is added. Next reveals each answer and explanation; the total score appears only at the end.
+
+## Lesson 3 · Page 2: GIS Data Types and Data Values
+
+Separate 26-question bank: 8 identification, 6 true/false, 12 multiple choice. Quick refresh selects 5 of each type (15). Covers spatial/attribute/image data, N–O–I–R, binary states, and the geographic-distribution associations in the supplied diagram. Short-answer synonyms include geographic/spatial and non-spatial/attribute. No enumeration is added. Notes, retries, and statistics use their own page and storage key.
+
+Follows the user’s corrected keynotes: Celsius is interval; elapsed age is ratio. The notes explicitly explain the handout discrepancy. Diagram associations are distinguished from measurement levels. Existing lessons remain unchanged.
