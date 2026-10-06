@@ -8,7 +8,7 @@ Keep all files together, then double-click `index.html` to open it in your brows
 
 ## Quiz flow
 
-1. Choose Page 1 or Page 2. Questions, retries, study notes, and saved scores stay separate. Then choose Quick refresh or Full review.
+1. Choose Page 1, Page 2, or Page 3. Questions, retries, study notes, and saved scores stay separate. Then choose Quick refresh or Full review.
 2. Select or type your answer.
 3. Click **Next** to reveal the correct answer and explanation. Your answer is locked for that question.
 4. Read the explanation, then click **Continue** for the next question.
@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -58,3 +58,9 @@ Page 2 has no multiple-input or enumeration questions. Those will be added only 
 Questions and answer explanations name the GIS concept directly, without requiring a textbook page or illustration. Topic labels explain what each separate quiz covers. Page 2 follows the user-provided keynotes: software and its four components, QGIS, people, methods and their four listed items, data and related attributes, in-house collection, commercial providers, and databases. The keynotes identify Data as the most important component because it fuels GIS; the question teaches that course wording. Extra examples from other pages are excluded. Page 2 uses a new statistics key for this revised bank; previous browser records remain untouched.
 
 Long grouped answers (Input and manipulation tools; Query, analysis, and visualization tools) are multiple-choice items on Page 2. Identification answers are short terms of at most three words; established GUI and DBMS aliases remain accepted except when the prompt explicitly asks for the full meaning.
+
+## Page 3: GIS Functions
+
+Page 3 contains 32 questions based only on the supplied GIS Functions page and keynotes: 10 identification, 10 true/false, and 12 multiple choice. Quick refresh has 15 questions. It covers the 5 Ms; location, distance, and area; monitoring changes and spatial patterns; modelling and derived datasets; the five management tasks; organization goals and expected outputs; data/software limitations; and the listed geographic layers. The course-specific placement of the chemical-leak example under Monitoring is retained in the study notes.
+
+Identification uses short terms, with Modeling/Modelling and Visualization/Visualisation accepted. Lists and long explanations use multiple choice. No enumeration questions are added. Page 3 has separate notes, questions, retries, and browser statistics; Page 1 and Page 2 records retain their existing keys. Next reveals each answer, and the total score appears only after the final question.

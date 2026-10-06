@@ -6,11 +6,12 @@
   <meta name="theme-color" content="#403acb">
   <meta name="description" content="Practice Introduction to GIS with instructor-style identification, true or false, and multiple-choice questions.">
   <title>GIS Study Club — Lesson 2 Practice</title>
-  <link rel="stylesheet" href="./styles.css?v=page2-keynotes-11">
-  <script defer src="./quiz-utils.js?v=page2-keynotes-11"></script>
-  <script defer src="./questions.js?v=page2-keynotes-11"></script>
-  <script defer src="./questions-page2.js?v=page2-keynotes-11"></script>
-  <script defer src="./app.js?v=page2-keynotes-11"></script>
+  <link rel="stylesheet" href="./styles.css?v=page3-functions-12">
+  <script defer src="./quiz-utils.js?v=page3-functions-12"></script>
+  <script defer src="./questions.js?v=page3-functions-12"></script>
+  <script defer src="./questions-page2.js?v=page3-functions-12"></script>
+  <script defer src="./questions-page3.js?v=page3-functions-12"></script>
+  <script defer src="./app.js?v=page3-functions-12"></script>
 </head>
 <body>
   <header class="topbar"><a class="brand" href="./index.html" aria-label="GIS Study Club home"><span class="brand-icon" aria-hidden="true">◎</span> GIS <span class="brand-light">Study Club</span></a><span class="top-label">YOUR PERSONAL REVIEW SPACE</span></header>
@@ -31,6 +32,7 @@
         <fieldset class="page-options"><legend>Choose a quiz topic</legend>
           <label><input type="radio" name="study-page" value="page1" checked><span><strong>Page 1</strong><small>GIS introduction & hardware</small></span></label>
           <label><input type="radio" name="study-page" value="page2"><span><strong>Page 2</strong><small>Software, People, Methods & Data</small></span></label>
+          <label><input type="radio" name="study-page" value="page3"><span><strong>Page 3</strong><small>GIS Functions</small></span></label>
         </fieldset><p id="page-description" class="muted"></p>
         <div class="format-row"><span>◉ Multiple choice</span><span>◐ True or false</span><span>▤ Identification</span><span id="enumeration-format">≡ Enumeration</span></div>
         <section class="setup-card" aria-labelledby="setup-title">
@@ -74,6 +76,19 @@
     <p><strong>Data sources:</strong> collected in-house or bought from a commercial data provider. Most GISs maintain a database to organize and manage data.</p>
     <p><strong>Remember:</strong> software provides tools; methods explain how to apply them.</p>
     <p><strong>Page 2 practice:</strong> 10 identification, 10 true/false, and 12 multiple-choice questions. No multiple-input questions are included on this page.</p>
+  </template>
+  <template id="page3-notes">
+    <p><strong>The 5 Ms:</strong> Mapping, Measurement, Monitoring, Modelling, and Management.</p>
+    <ul><li><strong>Mapping:</strong> shows where places and features are located.</li><li><strong>Measurement:</strong> determines distance and size/area, such as the distance to a hospital or the size of a campus.</li><li><strong>Monitoring:</strong> examines conditions, changes over time, and spatial patterns. Examples include population changes, flooding in Manila, and the relationship between rainfall and landslide locations.</li><li><strong>Modelling:</strong> creates a simplified representation of a phenomenon or system.</li><li><strong>Management:</strong> handles geographic information through five main tasks.</li></ul>
+    <p><strong>Monitoring example in the course notes:</strong> the question about a chemical leak into Subang Dako River is grouped under Monitoring. Keep this course grouping in mind when reviewing that example.</p>
+    <p><strong>Spatial pattern:</strong> how things are arranged or distributed across places.</p>
+    <p><strong>Derived datasets:</strong> Existing data → Apply analytical or transformation functions → New derived data.</p>
+    <p><strong>Management tasks, in order:</strong> Input → Manipulation → Query → Analysis → Visualization.</p>
+    <ul><li><strong>Input:</strong> enter data.</li><li><strong>Manipulation:</strong> modify or prepare data.</li><li><strong>Query:</strong> retrieve information matching a question or condition.</li><li><strong>Analysis:</strong> examine data for patterns, relationships, or answers.</li><li><strong>Visualization:</strong> present information visually, such as through maps.</li></ul>
+    <p><strong>Project planning:</strong> GIS functions depend on an organization’s goals and needs. Some projects mainly need data capture and presentation, with little or no analysis. Clear goals and expected GIS outputs are important.</p>
+    <p><strong>Two limitations:</strong> availability of data and functions of the specific software package.</p>
+    <p><strong>Example layers:</strong> customers, streets, parcels, elevation, and land usage.</p>
+    <p><strong>Page 3 practice:</strong> 10 identification, 10 true/false, and 12 multiple-choice questions. Long answers and lists use multiple choice. No multiple-input questions are included.</p>
   </template>
   <noscript>Please enable JavaScript to use this quiz.</noscript>
 </body>

@@ -1,6 +1,11 @@
 (() => {
   'use strict';
-  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS};
+  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS, page3: window.GIS_PAGE3_QUESTIONS};
+  const pages = {
+    page1: {name: 'Page 1', title: 'GIS introduction & hardware', storage: 'gis-study-club-page1-scope-v6', description: 'GIS introduction, the five component names, and hardware categories.'},
+    page2: {name: 'Page 2', title: 'Software, People, Methods & Data', storage: 'gis-study-club-page2-keynotes-v2', description: 'Software, People, Methods, and Data.', topics: ['Software & GUI', 'People', 'Methods', 'Data & sources']},
+    page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-v1', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']}
+  };
   let activePage = 'page1';
   let bank = banks[activePage];
   const $ = id => document.getElementById(id);
@@ -126,14 +131,14 @@
     $('again').addEventListener('click', () => start(Number(document.querySelector('input[name="length"]:checked').value)));
     $('result-home').addEventListener('click', () => { display('home'); $('start').focus({preventScroll:true}); });
   }
-  function labelsForMode() { return (activePage === 'page1' ? 'Page 1' : 'Page 2') + ' · ' + (mode === 'retry' ? 'Mistake practice' : mode === 'full' ? 'Full review' : 'Quick refresh'); }
+  function labelsForMode() { return pages[activePage].name + ' · ' + (mode === 'retry' ? 'Mistake practice' : mode === 'full' ? 'Full review' : 'Quick refresh'); }
   const firstPageNotes = $('study-notes').innerHTML;
   const firstPageTopics = $('study-topics').innerHTML;
   function selectPage(page) {
     activePage = page;
     bank = banks[page];
-    storageKey = page === 'page1' ? 'gis-study-club-page1-scope-v6' : 'gis-study-club-page2-keynotes-v2';
-    const isPage2 = page === 'page2';
+    const config = pages[page];
+    storageKey = config.storage;
     const enums = bank.filter(q => q.type === 'enum').length;
     const quickCount = ['mc','tf','fill'].reduce((sum, type) => sum + Math.min(5,bank.filter(q => q.type === type).length),0) + enums;
     const quick = document.querySelector('input[name="length"][data-mode="quick"]');
@@ -141,13 +146,13 @@
     quick.value = quickCount; full.value = bank.length;
     $('quick-description').textContent = quickCount + (enums ? ' questions · includes all lists' : ' questions · 5 of each type');
     $('full-description').textContent = bank.length + ' questions · selected page only';
-    $('bank-count').textContent = bank.length + ' questions · ' + (isPage2 ? 'Page 2' : 'Page 1');
-    $('page-description').textContent = isPage2 ? 'Page 2: Software, People, Methods, and Data. Questions stay separate from Page 1.' : 'Page 1: GIS introduction, the five component names, and hardware categories.';
-    $('study-label').textContent = isPage2 ? 'Page 2 · Software, People, Methods & Data' : 'Page 1 · GIS introduction & hardware';
+    $('bank-count').textContent = bank.length + ' questions · ' + config.name;
+    $('page-description').textContent = config.name + ': ' + config.description + ' Questions stay within this topic.';
+    $('study-label').textContent = config.name + ' · ' + config.title;
     $('setup-note').textContent = enums ? 'All ' + enums + ' enumeration questions are included in each round. No timer.' : 'Identification, true or false, and multiple choice. No timer.';
     $('enumeration-format').hidden = !enums;
-    $('study-topics').innerHTML = isPage2 ? '<p><span>01</span> Software & GUI</p><p><span>02</span> People</p><p><span>03</span> Methods</p><p><span>04</span> Data & sources</p>' : firstPageTopics;
-    $('study-notes').innerHTML = isPage2 ? $('page2-notes').innerHTML : firstPageNotes;
+    $('study-topics').innerHTML = config.topics ? config.topics.map((topic, i) => `<p><span>0${i + 1}</span> ${escape(topic)}</p>`).join('') : firstPageTopics;
+    $('study-notes').innerHTML = page === 'page1' ? firstPageNotes : $(page + '-notes').innerHTML;
     round = []; responses = []; retryPool = [];
   }
   document.querySelectorAll('input[name="study-page"]').forEach(input => input.addEventListener('change', () => selectPage(input.value)));
