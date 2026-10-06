@@ -3,7 +3,7 @@
   const bank = window.GIS_QUESTIONS;
   const $ = id => document.getElementById(id);
   const labels = {mc: 'Multiple choice', tf: 'True or false', fill: 'Fill in the blank'};
-  const storageKey = 'gis-study-club-v1';
+  const storageKey = 'gis-study-club-essential-v2';
   let round = [], index = 0, responses = [], revealed = false, mode = 'quick', retryPool = [];
   const normalize = value => String(value).normalize('NFKC').toLowerCase().trim().replace(/[’']/g, '').replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -22,7 +22,7 @@
     ['home', 'quiz', 'results'].forEach(id => { $(id).hidden = id !== name; });
     window.scrollTo({top: 0, behavior: 'instant'});
   }
-  function start(count, pool = bank, newMode = count === 45 ? 'full' : 'quick') {
+  function start(count, pool = bank, newMode = count > 15 ? 'full' : 'quick') {
     mode = newMode;
     const selection = mode === 'quick'
       ? ['mc','tf','fill'].flatMap(type => shuffle(pool.filter(q => q.type === type)).slice(0, 5))
@@ -84,10 +84,10 @@
       const parsed = JSON.parse(localStorage.getItem(storageKey) || '{}');
       const stats = parsed && typeof parsed === 'object' ? parsed : {};
       const rounds = Number.isSafeInteger(stats.rounds) && stats.rounds >= 0 ? stats.rounds + 1 : 1;
-      const previousBest = Number.isInteger(stats.bestFull) && stats.bestFull >= 0 && stats.bestFull <= 45 ? stats.bestFull : 0;
+      const previousBest = Number.isInteger(stats.bestFull) && stats.bestFull >= 0 && stats.bestFull <= bank.length ? stats.bestFull : 0;
       const bestFull = mode === 'full' ? Math.max(score, previousBest) : previousBest;
       localStorage.setItem(storageKey, JSON.stringify({rounds, bestFull}));
-      return `${rounds} completed round${rounds === 1 ? '' : 's'} in this browser.${mode === 'full' ? ` Best full review: ${bestFull}/45.` : ''}`;
+      return `${rounds} completed round${rounds === 1 ? '' : 's'} in this browser.${mode === 'full' ? ` Best full review: ${bestFull}/${bank.length}.` : ''}`;
     } catch { return 'Browser storage is unavailable. You can still repeat every quiz.'; }
   }
   function finish() {
