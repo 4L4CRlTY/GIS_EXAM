@@ -35,7 +35,7 @@ The relative asset paths also work under a repository subpath. Uploading the sou
 
 ## Edit the questions
 
-The bank is in `questions.js`. It contains 10 multiple-choice, 10 true/false, and 10 fill-in-the-blank questions focused on essential definitions, component roles, device classification, misconceptions, and application scenarios. Counting components and completing slogans are not included. Fill-in questions ask for meaningful GIS terms or categories. Each question has a unique ID, topic, correct answer, and explanation. Update the homepage counts and full-review radio value if you change the bank size; quick mode selects five questions per type.
+The bank is in `questions.js`. It contains 10 multiple-choice, 10 true/false, and 10 fill-in-the-blank questions written in short, simple English about essential definitions, component roles, hardware categories, and real-world uses. Answers and explanations are kept brief. Counting components and completing slogans are not included. Fill-in questions ask for meaningful GIS terms or categories. Each question has a unique ID, topic, correct answer, and explanation. Update the homepage counts and full-review radio value if you change the bank size; quick mode selects five questions per type.
 
 This revised bank uses separate browser statistics so scores from the old 45-question version are not mixed with the new 30-question review. Earlier stored statistics are left untouched.
 
