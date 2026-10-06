@@ -132,7 +132,7 @@
   function selectPage(page) {
     activePage = page;
     bank = banks[page];
-    storageKey = page === 'page1' ? 'gis-study-club-page1-scope-v6' : 'gis-study-club-page2-v1';
+    storageKey = page === 'page1' ? 'gis-study-club-page1-scope-v6' : 'gis-study-club-page2-keynotes-v2';
     const isPage2 = page === 'page2';
     const enums = bank.filter(q => q.type === 'enum').length;
     const quickCount = ['mc','tf','fill'].reduce((sum, type) => sum + Math.min(5,bank.filter(q => q.type === type).length),0) + enums;

@@ -55,6 +55,6 @@ Page 2 has no multiple-input or enumeration questions. Those will be added only 
 
 ## Self-contained wording
 
-Questions and answer explanations name the GIS concept directly, without requiring a textbook page or illustration. Topic labels explain what each separate quiz covers. Data questions focus on its role as the information used by GIS rather than assuming a universal ranking of component importance.
+Questions and answer explanations name the GIS concept directly, without requiring a textbook page or illustration. Topic labels explain what each separate quiz covers. Page 2 follows the user-provided keynotes: software and its four components, QGIS, people, methods and their four listed items, data and related attributes, in-house collection, commercial providers, and databases. The keynotes identify Data as the most important component because it fuels GIS; the question teaches that course wording. Extra examples from other pages are excluded. Page 2 uses a new statistics key for this revised bank; previous browser records remain untouched.
 
 Long grouped answers (Input and manipulation tools; Query, analysis, and visualization tools) are multiple-choice items on Page 2. Identification answers are short terms of at most three words; established GUI and DBMS aliases remain accepted except when the prompt explicitly asks for the full meaning.
