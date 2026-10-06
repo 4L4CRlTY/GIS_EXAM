@@ -1,6 +1,6 @@
 # GIS Study Club
 
-A repeatable quiz based on the supplied Lesson 2 notes and 24 instructor review questions. Built with plain HTML, CSS, and JavaScript. No installation, build process, external fonts, or accounts are required.
+A repeatable quiz based on the supplied Lesson 2 notes, with question wording modelled on the instructor examples. Built with plain HTML, CSS, and JavaScript. No installation, build process, external fonts, or accounts are required.
 
 ## Open locally
 
@@ -35,20 +35,9 @@ The relative asset paths also work under a repository subpath. Uploading the sou
 
 ## Question pattern and sources
 
-The bank in `questions.js` follows the instructor's pattern: a short definition or description asks for a specific component, function, application, or concept. True/false items use direct statements. Multiple-choice items use the same style with term-based choices.
+Page 1 follows the first supplied lesson page only: the meaning and purpose of GIS, why location matters, the five component names, the role of hardware, and hardware categories with examples. Instructor examples guide the questioning style, not the scope. Detailed functions (the 5Ms), later application areas, and detailed explanations of the other components are excluded.
 
-- 15 identification and 9 true/false items follow the supplied 24 instructor review questions.
-- 6 additional multiple-choice items provide practice with the same concepts.
-- `sourceQuestion` records the original review question number; null identifies an added practice item.
-- The answer for instructor Question 12, Monitoring, comes from the earlier lesson notes because its answer feedback is not visible in the supplied screenshot.
-- Instructor terminology is preserved, including Transportation, Disaster Management, and GIS as a Question-Answering Tool.
-- Modelling and Modeling are both accepted. Case, punctuation, and extra spaces do not affect matching.
-- Routing is not accepted for Transportation, and GIS is not accepted for Disaster Management: the question asks for an application area.
-- Correctness feedback is based on the answer key, not the inconsistent “Incorrect” wording shown under some correctly answered false statements in the reference images.
-
-Each question has a unique ID, topic, answer, and explanation. Quick mode selects five of each original type and always includes both enumeration questions. Update the homepage counts and full-review radio value if changing the bank size.
-
-This bank uses separate browser statistics, leaving earlier versions' records untouched. These are practice questions based on supplied material, not a prediction of a future exam.
+Page 1 has 10 identification, 10 true/false, 10 multiple-choice, and 2 enumeration questions. Quick mode selects five of each single-answer type and both enumeration items, for 17 questions. Each question has a unique ID, topic, answer, and explanation. Page 1 now uses a new statistics key so scores from the earlier, broader bank are not mixed with this corrected content. Earlier browser records are left untouched. These are practice questions, not an exam prediction.
 
 ## Five-component enumeration
 
@@ -60,7 +49,7 @@ Four boxes ask for Data Collection, Data Input, Data Output, and Data Analysis a
 
 ## Separate lesson pages
 
-Page 1 preserves the existing 32-question instructor-style bank, including the components and hardware enumeration questions (17 in quick mode). It includes the earlier instructor examples, not only the first source page. Page 2 contains 32 questions based only on the supplied Components (continued) page: 10 identification, 10 true/false, and 12 multiple-choice questions (15 in quick mode). The banks never mix. Each page has its own stored results; Page 1 retains its previous storage key.
+Page 1 contains 32 questions on GIS introduction and hardware (17 in quick mode), including the two requested enumeration questions. Page 2 contains 32 questions based only on the Components (continued) page: 10 identification, 10 true/false, and 12 multiple-choice questions (15 in quick mode). Questions, study notes, retries, and stored results stay separate for each page.
 
 Page 2 has no multiple-input or enumeration questions. Those will be added only when the user requests specific lists. The existing Page 1 component and hardware-category enumeration questions remain available. Page 2 identification uses one answer box; aliases such as GUI and DBMS are supported where appropriate.
 

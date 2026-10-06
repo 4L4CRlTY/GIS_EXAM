@@ -6,19 +6,19 @@
   <meta name="theme-color" content="#403acb">
   <meta name="description" content="Practice Introduction to GIS with instructor-style identification, true or false, and multiple-choice questions.">
   <title>GIS Study Club — Lesson 2 Practice</title>
-  <link rel="stylesheet" href="./styles.css?v=short-input-9">
-  <script defer src="./quiz-utils.js?v=short-input-9"></script>
-  <script defer src="./questions.js?v=short-input-9"></script>
-  <script defer src="./questions-page2.js?v=short-input-9"></script>
-  <script defer src="./app.js?v=short-input-9"></script>
+  <link rel="stylesheet" href="./styles.css?v=page1-scope-10">
+  <script defer src="./quiz-utils.js?v=page1-scope-10"></script>
+  <script defer src="./questions.js?v=page1-scope-10"></script>
+  <script defer src="./questions-page2.js?v=page1-scope-10"></script>
+  <script defer src="./app.js?v=page1-scope-10"></script>
 </head>
 <body>
   <header class="topbar"><a class="brand" href="./index.html" aria-label="GIS Study Club home"><span class="brand-icon" aria-hidden="true">◎</span> GIS <span class="brand-light">Study Club</span></a><span class="top-label">YOUR PERSONAL REVIEW SPACE</span></header>
   <main class="layout">
     <aside class="sidebar">
       <span class="eyebrow">THE STUDY PATH</span>
-      <div class="lesson-label"><span class="lesson-number">02</span><div><strong>Introduction to GIS</strong><span id="study-label">Page 1 · GIS basics & applications</span></div></div>
-      <div class="topics" id="study-topics"><p><span>01</span> GIS concepts</p><p><span>02</span> The five components</p><p><span>03</span> The 5 Ms of GIS</p><p><span>04</span> Real-world applications</p></div>
+      <div class="lesson-label"><span class="lesson-number">02</span><div><strong>Introduction to GIS</strong><span id="study-label">Page 1 · GIS introduction & hardware</span></div></div>
+      <div class="topics" id="study-topics"><p><span>01</span> GIS concepts</p><p><span>02</span> The five components</p><p><span>03</span> Hardware & its role</p><p><span>04</span> Hardware categories</p></div>
       <div class="map-art" aria-hidden="true"><svg viewBox="0 0 260 180" fill="none"><path d="M10 50 84 23 169 43 243 15V130L172 163 87 143 10 165Z" fill="#e6e5fc" stroke="#bbb8e7"/><path d="M84 23 87 143M169 43 172 163" stroke="#bbb8e7"/><path d="m10 105 55-20 35 11 44-29 37 9 62-27" stroke="white" stroke-width="12"/><path d="m37 40 22 56 31 23 17 29M208 30l-17 66 27 46" stroke="white" stroke-width="6"/><path d="M58 110c18-44 61-37 101-20 36 15 47-2 59-26" stroke="#827cda" stroke-width="3" stroke-dasharray="5 6"/><path d="M155 52a19 19 0 1 1 38 0c0 16-19 34-19 34s-19-18-19-34Z" fill="#4840ce"/><circle cx="174" cy="52" r="7" fill="white"/><circle cx="58" cy="110" r="6" fill="#247a65"/></svg><span>Everything happens somewhere.</span></div>
       <div class="sidebar-note"><span class="tiny-star">✦</span><p>A little practice.<br>A clearer understanding.</p></div>
       <span class="source-note">Based on GIS study material and sample questions.<br>Practice questions, not an exam prediction.</span>
@@ -29,7 +29,7 @@
         <h1>Your next step to<br><em>knowing GIS.</em></h1>
         <p class="lead">Practice important GIS concepts.<br>Read the description, identify the term, and learn why it fits.</p>
         <fieldset class="page-options"><legend>Choose a quiz topic</legend>
-          <label><input type="radio" name="study-page" value="page1" checked><span><strong>Page 1</strong><small>GIS basics & applications</small></span></label>
+          <label><input type="radio" name="study-page" value="page1" checked><span><strong>Page 1</strong><small>GIS introduction & hardware</small></span></label>
           <label><input type="radio" name="study-page" value="page2"><span><strong>Page 2</strong><small>Software, People, Methods & Data</small></span></label>
         </fieldset><p id="page-description" class="muted"></p>
         <div class="format-row"><span>◉ Multiple choice</span><span>◐ True or false</span><span>▤ Identification</span><span id="enumeration-format">≡ Enumeration</span></div>
@@ -43,7 +43,7 @@
           <p class="setup-foot" id="setup-note">Both enumeration questions are included in every round. No timer.</p>
         </section>
         <div class="how-it-works"><span class="info-icon">i</span><p><strong>Answer → Next → Learn → Continue.</strong><br>Inig click sa Next, makita ang correct answer ug explanation. Your score appears only at the end.</p></div>
-        <details class="notes"><summary>Need a refresher? Open your key notes <span aria-hidden="true">+</span></summary><div class="notes-content" id="study-notes"><p><strong>GIS = Geographic Information System.</strong> It organizes, analyzes, visualizes, and shares information linked to locations. Its key question is <strong>“Where?”</strong></p><p>Knowing where helps us understand <strong>what, when, how, and why</strong> something happened, connecting our local environment to the wider world.</p><p><strong>Five components:</strong> hardware, software, data, people, and methods/applications.</p><p><strong>Hardware:</strong> physical equipment that runs software, stores collected data, and lets users interact with it.</p><ul><li>Collection: GPS, cameras, probes.</li><li>Input: scanners, digitizers.</li><li>Output: printers, computer monitors, plotters.</li><li>Analysis and storage: computers, hard drives.</li></ul><p><strong>Applications:</strong> locating disease outbreaks, recording a new frog species’ location, tracking tornado paths, and finding the nearest supermarket.</p><p><strong>Answer guide:</strong> First check whether the question asks for a <strong>component, function, application, or concept</strong>.</p><ul><li><strong>Mapping:</strong> locating and visually representing features.</li><li><strong>Measurement:</strong> distance, length, and area.</li><li><strong>Monitoring:</strong> observing changes over time.</li><li><strong>Modelling:</strong> representing or predicting possible conditions.</li><li><strong>Management:</strong> planning, decisions, and resource allocation.</li></ul><p><strong>Applications:</strong> crops and land = Agriculture; routes and traffic = Transportation; flood and landslide hazards = Disaster Management.</p><p><strong>GIS as a Question-Answering Tool:</strong> describes using GIS to answer “Where?”, “What is nearby?”, “What pattern exists?”, and “What may happen?”</p><p><strong>Full review:</strong> 15 identification, 9 true/false, 6 multiple-choice questions, and 2 enumeration questions: five components and four hardware categories. Identification, true/false, and multiple-choice items cover GIS concepts, components, functions, and applications.</p></div></details>
+        <details class="notes"><summary>Need a refresher? Open your key notes <span aria-hidden="true">+</span></summary><div class="notes-content" id="study-notes"><p><strong>GIS = Geographic Information System.</strong> It organizes, analyzes, visualizes, and shares information linked to locations. Its key question is <strong>“Where?”</strong></p><p>Knowing where helps us understand <strong>what, when, how, and why</strong> something happened, connecting our local environment to the wider world.</p><p><strong>Five components:</strong> hardware, software, data, people, and methods/applications.</p><p><strong>Hardware:</strong> physical equipment that runs software, stores collected data, and lets users interact with it.</p><ul><li>Collection: GPS, cameras, probes.</li><li>Input: scanners, digitizers.</li><li>Output: printers, computer monitors, plotters.</li><li>Analysis and storage: computers, hard drives.</li></ul><p><strong>Applications:</strong> locating disease outbreaks, recording a new frog species’ location, tracking tornado paths, and finding the nearest supermarket.</p><p><strong>Full review:</strong> 10 identification, 10 true/false, 10 multiple-choice questions, and 2 enumeration questions: five components and four hardware categories. This quiz covers the GIS introduction and hardware. The detailed GIS functions belong to a later lesson page.</p></div></details>
       </section>
       <section id="quiz" hidden>
         <div class="quiz-top"><button class="text-button" id="exit">← Study home</button><span id="session-name" class="small-badge"></span></div>

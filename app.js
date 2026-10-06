@@ -5,7 +5,7 @@
   let bank = banks[activePage];
   const $ = id => document.getElementById(id);
   const labels = {mc: 'Multiple choice', tf: 'True or false', fill: 'Identification', enum: 'Enumeration'};
-  let storageKey = 'gis-study-club-hardware-enumeration-v5';
+  let storageKey = 'gis-study-club-page1-scope-v6';
   let round = [], index = 0, responses = [], revealed = false, mode = 'quick', retryPool = [];
   const {normalize, checkEnumeration} = window.GIS_QUIZ_UTILS;
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -132,7 +132,7 @@
   function selectPage(page) {
     activePage = page;
     bank = banks[page];
-    storageKey = page === 'page1' ? 'gis-study-club-hardware-enumeration-v5' : 'gis-study-club-page2-v1';
+    storageKey = page === 'page1' ? 'gis-study-club-page1-scope-v6' : 'gis-study-club-page2-v1';
     const isPage2 = page === 'page2';
     const enums = bank.filter(q => q.type === 'enum').length;
     const quickCount = ['mc','tf','fill'].reduce((sum, type) => sum + Math.min(5,bank.filter(q => q.type === type).length),0) + enums;
@@ -142,8 +142,8 @@
     $('quick-description').textContent = quickCount + (enums ? ' questions · includes all lists' : ' questions · 5 of each type');
     $('full-description').textContent = bank.length + ' questions · selected page only';
     $('bank-count').textContent = bank.length + ' questions · ' + (isPage2 ? 'Page 2' : 'Page 1');
-    $('page-description').textContent = isPage2 ? 'Page 2: Software, People, Methods, and Data. Questions stay separate from Page 1.' : 'Page 1: GIS basics, components, hardware categories, functions, and applications.';
-    $('study-label').textContent = isPage2 ? 'Page 2 · Software, People, Methods & Data' : 'Page 1 · GIS basics & applications';
+    $('page-description').textContent = isPage2 ? 'Page 2: Software, People, Methods, and Data. Questions stay separate from Page 1.' : 'Page 1: GIS introduction, the five component names, and hardware categories.';
+    $('study-label').textContent = isPage2 ? 'Page 2 · Software, People, Methods & Data' : 'Page 1 · GIS introduction & hardware';
     $('setup-note').textContent = enums ? 'All ' + enums + ' enumeration questions are included in each round. No timer.' : 'Identification, true or false, and multiple choice. No timer.';
     $('enumeration-format').hidden = !enums;
     $('study-topics').innerHTML = isPage2 ? '<p><span>01</span> Software & GUI</p><p><span>02</span> People</p><p><span>03</span> Methods</p><p><span>04</span> Data & sources</p>' : firstPageTopics;
