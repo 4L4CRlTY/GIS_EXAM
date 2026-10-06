@@ -8,7 +8,7 @@ Keep all files together, then double-click `index.html` to open it in your brows
 
 ## Quiz flow
 
-1. Choose Quick refresh (17 questions: five of each original type plus both enumeration questions) or Full review (32 questions: 15 identification, 9 true/false, 6 multiple choice, and 2 enumeration).
+1. Choose Page 1 or Page 2. Questions, retries, study notes, and saved scores stay separate. Then choose Quick refresh or Full review.
 2. Select or type your answer.
 3. Click **Next** to reveal the correct answer and explanation. Your answer is locked for that question.
 4. Read the explanation, then click **Continue** for the next question.
@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -57,3 +57,9 @@ Enter Hardware, Software, People, Data, and Methods in five separate boxes, in a
 ## Hardware-category enumeration
 
 Four boxes ask for Data Collection, Data Input, Data Output, and Data Analysis and Storage. Any order is accepted. Data Analysis (or Analysis) is also accepted, but feedback teaches the full lesson term, Data Analysis and Storage. Short forms Collection, Input, and Output are accepted. Duplicate aliases cannot earn credit twice. The question earns one point only when all four different categories are correct. It appears in quick and full review, and mistake practice when missed. The answer feedback includes example devices for each category.
+
+## Separate lesson pages
+
+Page 1 preserves the existing 32-question instructor-style bank, including the components and hardware enumeration questions (17 in quick mode). It includes the earlier instructor examples, not only the first source page. Page 2 contains 32 questions based only on the supplied Components (continued) page: 12 identification, 10 true/false, and 10 multiple-choice questions (15 in quick mode). The banks never mix. Each page has its own stored results; Page 1 retains its previous storage key.
+
+Page 2 has no multiple-input or enumeration questions. Those will be added only when the user requests specific lists. The existing Page 1 component and hardware-category enumeration questions remain available. Page 2 identification uses one answer box; aliases such as GUI and DBMS are supported where appropriate.

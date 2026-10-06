@@ -1,9 +1,11 @@
 (() => {
   'use strict';
-  const bank = window.GIS_QUESTIONS;
+  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS};
+  let activePage = 'page1';
+  let bank = banks[activePage];
   const $ = id => document.getElementById(id);
   const labels = {mc: 'Multiple choice', tf: 'True or false', fill: 'Identification', enum: 'Enumeration'};
-  const storageKey = 'gis-study-club-hardware-enumeration-v5';
+  let storageKey = 'gis-study-club-hardware-enumeration-v5';
   let round = [], index = 0, responses = [], revealed = false, mode = 'quick', retryPool = [];
   const {normalize, checkEnumeration} = window.GIS_QUIZ_UTILS;
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -34,7 +36,7 @@
   function renderQuestion() {
     revealed = false;
     const q = round[index];
-    $('session-name').textContent = mode === 'retry' ? 'Mistake practice' : mode === 'full' ? 'Full review' : 'Quick refresh';
+    $('session-name').textContent = labelsForMode();
     $('question-count').textContent = `Question ${index + 1} of ${round.length}`;
     $('progress').max = round.length; $('progress').value = index + 1;
     $('type-label').textContent = labels[q.type]; $('topic-label').textContent = q.topic;
@@ -92,7 +94,7 @@
         $('component-status-' + i).textContent = status;
         $('component-' + i).classList.add(item.status === 'correct' ? 'enum-correct' : 'enum-wrong');
       });
-      $('feedback').innerHTML += enumeration.missing.length ? `<p><b>Missing ${q.entryLabel === 'Category' ? 'categories' : 'components'}:</b> ${escape(enumeration.missing.join(', '))}</p>` : '';
+      $('feedback').innerHTML += enumeration.missing.length ? `<p><b>Missing ${q.missingLabel || (q.entryLabel === 'Category' ? 'categories' : 'components')}:</b> ${escape(enumeration.missing.join(', '))}</p>` : '';
     }
     $('feedback').hidden = false;
     $('next').textContent = index === round.length - 1 ? 'See my results →' : 'Continue →';
@@ -124,7 +126,32 @@
     $('again').addEventListener('click', () => start(Number(document.querySelector('input[name="length"]:checked').value)));
     $('result-home').addEventListener('click', () => { display('home'); $('start').focus({preventScroll:true}); });
   }
-  function labelsForMode() { return mode === 'retry' ? 'Mistake practice' : mode === 'full' ? 'Full review' : 'Quick refresh'; }
+  function labelsForMode() { return (activePage === 'page1' ? 'Page 1' : 'Page 2') + ' · ' + (mode === 'retry' ? 'Mistake practice' : mode === 'full' ? 'Full review' : 'Quick refresh'); }
+  const firstPageNotes = $('study-notes').innerHTML;
+  const firstPageTopics = $('study-topics').innerHTML;
+  function selectPage(page) {
+    activePage = page;
+    bank = banks[page];
+    storageKey = page === 'page1' ? 'gis-study-club-hardware-enumeration-v5' : 'gis-study-club-page2-v1';
+    const isPage2 = page === 'page2';
+    const enums = bank.filter(q => q.type === 'enum').length;
+    const quickCount = ['mc','tf','fill'].reduce((sum, type) => sum + Math.min(5,bank.filter(q => q.type === type).length),0) + enums;
+    const quick = document.querySelector('input[name="length"][data-mode="quick"]');
+    const full = document.querySelector('input[name="length"][data-mode="full"]');
+    quick.value = quickCount; full.value = bank.length;
+    $('quick-description').textContent = quickCount + (enums ? ' questions · includes all lists' : ' questions · 5 of each type');
+    $('full-description').textContent = bank.length + ' questions · selected page only';
+    $('bank-count').textContent = bank.length + ' questions · ' + (isPage2 ? 'Page 2' : 'Page 1');
+    $('page-description').textContent = isPage2 ? 'Page 2: Software, People, Methods, and Data. Questions stay separate from Page 1.' : 'Page 1: Your existing introduction, instructor examples, and hardware practice.';
+    $('study-label').textContent = isPage2 ? 'Page 2 · Components continued' : 'Page 1 · Existing practice';
+    $('setup-note').textContent = enums ? 'All ' + enums + ' enumeration questions are included in each round. No timer.' : 'Identification, true or false, and multiple choice. No timer.';
+    $('enumeration-format').hidden = !enums;
+    $('study-topics').innerHTML = isPage2 ? '<p><span>01</span> Software & GUI</p><p><span>02</span> People</p><p><span>03</span> Methods</p><p><span>04</span> Data & sources</p>' : firstPageTopics;
+    $('study-notes').innerHTML = isPage2 ? $('page2-notes').innerHTML : firstPageNotes;
+    round = []; responses = []; retryPool = [];
+  }
+  document.querySelectorAll('input[name="study-page"]').forEach(input => input.addEventListener('change', () => selectPage(input.value)));
+  selectPage(document.querySelector('input[name="study-page"]:checked').value);
   $('start').addEventListener('click', () => start(Number(document.querySelector('input[name="length"]:checked').value)));
   $('exit').addEventListener('click', () => {
     if (confirm('Return to the study home? This unfinished round will not be saved.')) { display('home'); $('start').focus({preventScroll:true}); }
