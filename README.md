@@ -69,8 +69,10 @@ Identification uses short terms, with Modeling/Modelling and Visualization/Visua
 
 Page 3 also asks for Input, Manipulation, Query, Analysis, and Visualization in five separate boxes labelled Task 1–5. Any order is accepted. Visualisation and the supported Data-prefixed terms are accepted, but repeated terms or aliases do not count twice. All five different tasks earn one point; Next shows each entry’s result, the full correct list, and missing tasks. Both Page 3 enumeration questions are always included in quick and full review, and repeated in mistake practice when missed.
 
-## Page 4: GIS Applications
+## Page 4: GIS question types and tasks
 
-Page 4 contains 36 questions based on the supplied applications page and keynotes: 12 identification, 12 true/false, and 12 multiple choice. Quick refresh has 15 questions. Topics are Location, Condition, Trend, Routing, Pattern, and Model; the three regular GIS tasks; application areas; and GIS in schools. Location asks what is at a known place; Condition finds places meeting requirements. Model is used as the question-type name, keeping it distinct from the Page 3 function Modelling. The source phrase special patterns is taught as spatial patterns, as clarified in the supplied keynotes.
+Page 4 is restricted to the user's two selected topics: the six GIS question types (Location, Condition, Trend, Routing, Pattern, Model) and three regular GIS tasks (identify locations meeting criteria; explore relationships among datasets; display information graphically and numerically, before or after analysis). Application-area and school questions and notes are removed.
 
-Questions use the instructor’s description and scenario pattern, with short typed answers and longer answers/lists as multiple choice. No enumeration or multiple inputs are added. Page 4 has its own notes, questions, retry pool, and browser statistics. Existing page banks and statistics keys are preserved.
+The focused bank has 18 questions: 6 identification, 6 true/false, and 6 multiple choice. Quick refresh has 15 questions. Location asks what is at a known place; Condition finds places meeting requirements. Model is the question-type name. The source phrase special patterns is taught as spatial patterns, as clarified in the supplied keynotes.
+
+Questions retain the instructor's description and scenario pattern. Long answers and lists use multiple choice, with no multiple-input questions. Page 4 has separate notes, questions, retries, and a new statistics key so previous 36-question scores are not mixed with this focused bank. Earlier browser records and the other three pages remain unchanged.
