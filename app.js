@@ -5,7 +5,7 @@
     page1: {name: 'Page 1', title: 'GIS introduction & hardware', storage: 'gis-study-club-page1-scope-v6', description: 'GIS introduction, the five component names, and hardware categories.'},
     page2: {name: 'Page 2', title: 'Software, People, Methods & Data', storage: 'gis-study-club-page2-keynotes-v2', description: 'Software, People, Methods, and Data.', topics: ['Software & GUI', 'People', 'Methods', 'Data & sources']},
     page3: {name: 'Page 3', title: 'GIS Functions', storage: 'gis-study-club-page3-tasks-v3', description: 'The 5 Ms, management tasks, project goals, GIS limitations, and geographic layers.', topics: ['The 5 Ms', 'Management tasks', 'Project goals & limitations', 'Geographic layers']},
-    page4: {name: 'Page 4', title: 'GIS question types & tasks', storage: 'gis-study-club-page4-focus-v2', description: 'Six GIS question types and three regular GIS tasks.', topics: ['Six question types', 'Location vs. Condition', 'Three regular GIS tasks']}
+    page4: {name: 'Page 4', title: 'GIS question types & tasks', storage: 'gis-study-club-page4-mc-v3', quickCount: 15, description: 'Six GIS question types and three regular GIS tasks. All questions are multiple choice.', topics: ['Six question types', 'Location vs. Condition', 'Three regular GIS tasks']}
   };
   let activePage = 'page1';
   let bank = banks[activePage];
@@ -33,7 +33,7 @@
   function start(count, pool = bank, newMode = count === bank.length ? 'full' : 'quick') {
     mode = newMode;
     const selection = mode === 'quick'
-      ? [...['mc','tf','fill'].flatMap(type => shuffle(pool.filter(q => q.type === type)).slice(0, 5)), ...pool.filter(q => q.type === 'enum')]
+      ? (pages[activePage].quickCount ? shuffle(pool).slice(0, pages[activePage].quickCount) : [...['mc','tf','fill'].flatMap(type => shuffle(pool.filter(q => q.type === type)).slice(0, 5)), ...pool.filter(q => q.type === 'enum')])
       : shuffle(pool).slice(0, count);
     round = shuffle(selection).map(q => ({...q, options: q.type === 'mc' ? shuffle(q.options) : q.options}));
     index = 0; responses = []; revealed = false;
@@ -126,7 +126,7 @@
     const title = score === round.length ? 'Every answer, understood.' : percent >= 70 ? 'You’re making connections.' : 'Every round is a fresh start.';
     const message = missed.length ? `You have ${missed.length} question${missed.length === 1 ? '' : 's'} to revisit. Practice them again, then try a new round.` : 'Perfect for this round! Try another shuffled round to strengthen your recall.';
     const stats = remember(score);
-    $('results').innerHTML = `<div class="section-kicker"><span class="status-dot"></span> ROUND COMPLETE</div><section class="results-card"><span class="result-icon" aria-hidden="true">✦</span><h2 id="result-title" tabindex="-1" style="margin-top:16px">${title}</h2><div class="result-score">${score}<small> / ${round.length}</small></div><p class="result-message">${percent}% correct · ${labelsForMode()}</p><p class="result-message">${message}</p><div class="breakdown">${['mc','tf','fill','enum'].map(type => { const ids = new Set(round.filter(q => q.type === type).map(q => q.id)); const n = responses.filter(r => ids.has(r.id) && r.correct).length; return `<div><strong>${ids.size ? `${n}/${ids.size}` : '—'}</strong><span>${labels[type]}</span></div>`; }).join('')}</div><div class="result-actions">${missed.length ? '<button class="primary" id="retry">Practice mistakes →</button>' : ''}<button class="${missed.length ? 'secondary' : 'primary'}" id="again">New shuffled round ↻</button><button class="secondary" id="result-home">Study home</button></div><p class="history-note">${escape(stats)}<br>Saved only on this browser when storage is available.</p></section><section class="review-list"><h2>Your answer review</h2><p class="muted">Open a question to revisit its answer and explanation.</p>${round.map((q, i) => { const r = responses[i]; return `<details class="review-item"><summary>${r.correct ? '✓' : '↺'} ${i+1}. ${escape(q.prompt)}</summary><p>Your answer: ${escape(r.value)}</p><p>Correct answer: <b>${escape(q.answer)}</b></p><p>${escape(q.explanation)}</p></details>`; }).join('')}</section>`;
+    $('results').innerHTML = `<div class="section-kicker"><span class="status-dot"></span> ROUND COMPLETE</div><section class="results-card"><span class="result-icon" aria-hidden="true">✦</span><h2 id="result-title" tabindex="-1" style="margin-top:16px">${title}</h2><div class="result-score">${score}<small> / ${round.length}</small></div><p class="result-message">${percent}% correct · ${labelsForMode()}</p><p class="result-message">${message}</p><div class="breakdown">${(bank.every(q => q.type === 'mc') ? ['mc'] : ['mc','tf','fill','enum']).map(type => { const ids = new Set(round.filter(q => q.type === type).map(q => q.id)); const n = responses.filter(r => ids.has(r.id) && r.correct).length; return `<div><strong>${ids.size ? `${n}/${ids.size}` : '—'}</strong><span>${labels[type]}</span></div>`; }).join('')}</div><div class="result-actions">${missed.length ? '<button class="primary" id="retry">Practice mistakes →</button>' : ''}<button class="${missed.length ? 'secondary' : 'primary'}" id="again">New shuffled round ↻</button><button class="secondary" id="result-home">Study home</button></div><p class="history-note">${escape(stats)}<br>Saved only on this browser when storage is available.</p></section><section class="review-list"><h2>Your answer review</h2><p class="muted">Open a question to revisit its answer and explanation.</p>${round.map((q, i) => { const r = responses[i]; return `<details class="review-item"><summary>${r.correct ? '✓' : '↺'} ${i+1}. ${escape(q.prompt)}</summary><p>Your answer: ${escape(r.value)}</p><p>Correct answer: <b>${escape(q.answer)}</b></p><p>${escape(q.explanation)}</p></details>`; }).join('')}</section>`;
     display('results'); $('result-title').focus({preventScroll: true});
     if ($('retry')) $('retry').addEventListener('click', () => start(retryPool.length, retryPool, 'retry'));
     $('again').addEventListener('click', () => start(Number(document.querySelector('input[name="length"]:checked').value)));
@@ -141,16 +141,19 @@
     const config = pages[page];
     storageKey = config.storage;
     const enums = bank.filter(q => q.type === 'enum').length;
-    const quickCount = ['mc','tf','fill'].reduce((sum, type) => sum + Math.min(5,bank.filter(q => q.type === type).length),0) + enums;
+    const multipleChoiceOnly = bank.every(q => q.type === 'mc');
+    const quickCount = config.quickCount || (['mc','tf','fill'].reduce((sum, type) => sum + Math.min(5,bank.filter(q => q.type === type).length),0) + enums);
     const quick = document.querySelector('input[name="length"][data-mode="quick"]');
     const full = document.querySelector('input[name="length"][data-mode="full"]');
     quick.value = quickCount; full.value = bank.length;
-    $('quick-description').textContent = quickCount + (enums ? ' questions · includes all lists' : ' questions · 5 of each type');
+    $('quick-description').textContent = quickCount + (multipleChoiceOnly ? ' questions · multiple choice' : enums ? ' questions · includes all lists' : ' questions · 5 of each type');
     $('full-description').textContent = bank.length + ' questions · selected page only';
     $('bank-count').textContent = bank.length + ' questions · ' + config.name;
     $('page-description').textContent = config.name + ': ' + config.description + ' Questions stay within this topic.';
     $('study-label').textContent = config.name + ' · ' + config.title;
-    $('setup-note').textContent = enums ? (enums === 1 ? 'The enumeration question is included in each round.' : 'All ' + enums + ' enumeration questions are included in each round.') + ' No timer.' : 'Identification, true or false, and multiple choice. No timer.';
+    $('setup-note').textContent = multipleChoiceOnly ? 'Multiple choice only. No timer.' : enums ? (enums === 1 ? 'The enumeration question is included in each round.' : 'All ' + enums + ' enumeration questions are included in each round.') + ' No timer.' : 'Identification, true or false, and multiple choice. No timer.';
+    $('tf-format').hidden = !bank.some(q => q.type === 'tf');
+    $('fill-format').hidden = !bank.some(q => q.type === 'fill');
     $('enumeration-format').hidden = !enums;
     $('study-topics').innerHTML = config.topics ? config.topics.map((topic, i) => `<p><span>0${i + 1}</span> ${escape(topic)}</p>`).join('') : firstPageTopics;
     $('study-notes').innerHTML = page === 'page1' ? firstPageNotes : $(page + '-notes').innerHTML;
