@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS, page3: window.GIS_PAGE3_QUESTIONS, page4: window.GIS_PAGE4_QUESTIONS, lesson3page1: window.GIS_LESSON3_PAGE1_QUESTIONS, lesson3page2: window.GIS_LESSON3_PAGE2_QUESTIONS, lesson3page3: window.GIS_LESSON3_PAGE3_QUESTIONS};
+  const banks = {page1: window.GIS_QUESTIONS, page2: window.GIS_PAGE2_QUESTIONS, page3: window.GIS_PAGE3_QUESTIONS, page4: window.GIS_PAGE4_QUESTIONS, lesson3page1: window.GIS_LESSON3_PAGE1_QUESTIONS, lesson3page2: window.GIS_LESSON3_PAGE2_QUESTIONS, lesson3page3: window.GIS_LESSON3_PAGE3_QUESTIONS, lesson3page4: window.GIS_LESSON3_PAGE4_QUESTIONS};
   const pages = {
     page1: {name: 'Page 1', title: 'GIS introduction & hardware', storage: 'gis-study-club-page1-scope-v6', description: 'GIS introduction, the five component names, and hardware categories.'},
     page2: {name: 'Page 2', title: 'Software, People, Methods & Data', storage: 'gis-study-club-page2-keynotes-v2', description: 'Software, People, Methods, and Data.', topics: ['Software & GUI', 'People', 'Methods', 'Data & sources']},
@@ -8,7 +8,8 @@
     page4: {name: 'Page 4', title: 'GIS question types & tasks', storage: 'gis-study-club-page4-mc-v3', quickCount: 15, description: 'Six GIS question types and three regular GIS tasks. All questions are multiple choice.', topics: ['Six question types', 'Location vs. Condition', 'Three regular GIS tasks']},
     lesson3page1: {name: 'Lesson 3 · Page 1', lesson: 3, lessonTitle: 'Data and Information', title: 'Data and Information', storage: 'gis-study-club-lesson3-page1-v1', description: 'Data vs. information, datum vs. data, mapping changes, computers, and the path from data to action.', topics: ['Data vs. information', 'Datum vs. data', 'Mapping & computers', 'From data to action']},
     lesson3page2: {name: 'Lesson 3 · Page 2', lesson: 3, lessonTitle: 'Data and Information', title: 'GIS Data Types and Data Values', storage: 'gis-study-club-lesson3-page2-v1', description: 'Spatial, attribute, and image data; Nominal, Ordinal, Interval, and Ratio; binary data and geographic distribution.', topics: ['Three GIS data types', 'N–O–I–R data values', 'Interval vs. Ratio', 'Binary & geographic distribution']},
-    lesson3page3: {name: 'Lesson 3 · Page 3', lesson: 3, lessonTitle: 'Data and Information', title: 'Data Models and Raster Data', storage: 'gis-study-club-lesson3-page3-v1', description: 'Data models, raster grids, image formats, and raster advantages and disadvantages.', topics: ['Raster & vector models', 'Rows, columns & pixels', 'Raster formats & LCDs', 'Advantages & disadvantages']}
+    lesson3page3: {name: 'Lesson 3 · Page 3', lesson: 3, lessonTitle: 'Data and Information', title: 'Data Models and Raster Data', storage: 'gis-study-club-lesson3-page3-v1', description: 'Data models, raster grids, image formats, and raster advantages and disadvantages.', topics: ['Raster & vector models', 'Rows, columns & pixels', 'Raster formats & LCDs', 'Advantages & disadvantages']},
+    lesson3page4: {name: 'Lesson 3 · Page 4', lesson: 3, lessonTitle: 'Data and Information', title: 'Vector Data', storage: 'gis-study-club-lesson3-page4-v1', description: 'Vector coordinates, points, lines, polygons, topology, and vector advantages and disadvantages.', topics: ['Coordinates & vertices', 'Points, lines & polygons', 'Topology & applications', 'Advantages & disadvantages']}
   };
   let activePage = 'page1';
   let bank = banks[activePage];

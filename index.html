@@ -6,16 +6,17 @@
   <meta name="theme-color" content="#403acb">
   <meta name="description" content="Practice GIS lessons with separate quizzes on Introduction to GIS and Data and Information.">
   <title>GIS Study Club — Lesson 2 Practice</title>
-  <link rel="stylesheet" href="./styles.css?v=lesson3-raster-20">
-  <script defer src="./quiz-utils.js?v=lesson3-raster-20"></script>
-  <script defer src="./questions.js?v=lesson3-raster-20"></script>
-  <script defer src="./questions-page2.js?v=lesson3-raster-20"></script>
-  <script defer src="./questions-page3.js?v=lesson3-raster-20"></script>
-  <script defer src="./questions-page4.js?v=lesson3-raster-20"></script>
-  <script defer src="./questions-lesson3-page1.js?v=lesson3-raster-20"></script>
-  <script defer src="./questions-lesson3-page2.js?v=lesson3-raster-20"></script>
-  <script defer src="./questions-lesson3-page3.js?v=lesson3-raster-20"></script>
-  <script defer src="./app.js?v=lesson3-raster-20"></script>
+  <link rel="stylesheet" href="./styles.css?v=lesson3-vector-21">
+  <script defer src="./quiz-utils.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions-page2.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions-page3.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions-page4.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions-lesson3-page1.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions-lesson3-page2.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions-lesson3-page3.js?v=lesson3-vector-21"></script>
+  <script defer src="./questions-lesson3-page4.js?v=lesson3-vector-21"></script>
+  <script defer src="./app.js?v=lesson3-vector-21"></script>
 </head>
 <body>
   <header class="topbar"><a class="brand" href="./index.html" aria-label="GIS Study Club home"><span class="brand-icon" aria-hidden="true">◎</span> GIS <span class="brand-light">Study Club</span></a><span class="top-label">YOUR PERSONAL REVIEW SPACE</span></header>
@@ -43,6 +44,7 @@
           <label><input type="radio" name="study-page" value="lesson3page1"><span><strong>Lesson 3 · Page 1</strong><small>Data and Information</small></span></label>
           <label><input type="radio" name="study-page" value="lesson3page2"><span><strong>Lesson 3 · Page 2</strong><small>GIS Data Types and Data Values</small></span></label>
           <label><input type="radio" name="study-page" value="lesson3page3"><span><strong>Lesson 3 · Page 3</strong><small>Data Models and Raster Data</small></span></label>
+          <label><input type="radio" name="study-page" value="lesson3page4"><span><strong>Lesson 3 · Page 4</strong><small>Vector Data</small></span></label>
         </fieldset><p id="page-description" class="muted"></p>
         <div class="format-row"><span>◉ Multiple choice</span><span id="tf-format">◐ True or false</span><span id="fill-format">▤ Identification</span><span id="enumeration-format">≡ Enumeration</span></div>
         <section class="setup-card" aria-labelledby="setup-title">
@@ -146,6 +148,18 @@
     <p><strong>Three disadvantages of raster data:</strong></p>
     <ul><li><strong>Not a compact data structure:</strong> many cells can require substantial storage.</li><li><strong>Connective relationships are difficult to represent:</strong> connections, such as how roads join, are harder to describe directly.</li><li><strong>Blocky appearance:</strong> grid cells can make boundaries look stepped rather than smooth.</li></ul>
     <p><strong>Practice:</strong> 22 questions: 5 identification, 6 true/false, and 11 multiple choice. Quick refresh has 15 questions. Longer answers and lists use multiple choice.</p>
+  </template>
+  <template id="lesson3page4-notes">
+    <p><strong>Vector data:</strong> use points and associated X, Y coordinate pairs to represent the vertices of geographic features. A coordinate pair specifies a position; a vertex defines a corner or bend in a feature’s shape.</p>
+    <p><strong>Memory cue:</strong> Raster = pixels; Vector = coordinates.</p>
+    <ul><li><strong>Points:</strong> zero-dimensional, with a single coordinate pair. Examples: buildings, wells, power poles, and sample locations. A point’s map symbol has a visible size, but the geometry itself has no length or area.</li><li><strong>Lines:</strong> linear features with length. Examples: roads, streams, faults, and boundaries. Lines directly connecting two nodes may be called chains, edges, segments, or arcs.</li><li><strong>Polygons:</strong> two-dimensional, closed features formed by lines enclosing an area. Examples: enclosed city boundaries, geologic formations, lakes, soil associations, and vegetation communities. Polygons have area and perimeter.</li></ul>
+    <p><strong>Remember:</strong> Point = location; Line = path; Polygon = enclosed area. A well’s location → point; a road’s path → line; a lake’s area → polygon.</p>
+    <p><strong>Topology:</strong> relationships between features, such as how roads connect to one another.</p>
+    <p><strong>Vector advantages:</strong> compact data structure; close representation of hand-drawn maps; an accuracy advantage in representing precise positions and boundaries; good storage of topological information; good for plotting data. Actual accuracy still depends on the source data.</p>
+    <p><strong>Vector disadvantages:</strong> complex data structure; overlaying is not simple; continuously varying surfaces such as topography are less straightforward to represent, according to the lesson.</p>
+    <p><strong>Raster comparison:</strong> raster uses rows and columns of cells, makes overlaying easier, and makes direct connectivity harder to represent. Vector uses coordinates and feature geometry and is good for storing topology.</p>
+    <p><strong>Pixelation:</strong> enlarging a raster image can reveal individual pixels and create a blocky appearance.</p>
+    <p><strong>Practice:</strong> 24 questions: 8 identification, 6 true/false, and 10 multiple choice. Quick refresh has 15 questions. Lists and longer answers use multiple choice.</p>
   </template>
   <noscript>Please enable JavaScript to use this quiz.</noscript>
 </body>
