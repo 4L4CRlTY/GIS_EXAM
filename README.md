@@ -22,7 +22,7 @@ The results page includes the score, a breakdown by question type, and a complet
 ## Host on GitHub Pages
 
 1. Create a GitHub repository (a public repository supports GitHub Pages on GitHub Free).
-2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `questions-lesson3-page2.js`, `questions-lesson3-page3.js`, `questions-lesson3-page4.js`, `questions-lesson3-page5.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
+2. Extract the ZIP and upload **the files inside it** to your repository root: `index.html`, `styles.css`, `questions.js`, `questions-page2.js`, `questions-page3.js`, `questions-page4.js`, `questions-lesson3-page1.js`, `questions-lesson3-page2.js`, `questions-lesson3-page3.js`, `questions-lesson3-page4.js`, `questions-lesson3-page5.js`, `questions-lesson3-page6.js`, `app.js`, `quiz-utils.js`, and this README. Do not upload the ZIP itself as the website.
 3. Commit the files to your `main` branch.
 4. In the repository, open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -106,3 +106,9 @@ Question wording distinguishes geometry from display symbols and avoids claiming
 Separate 22-question bank: 5 identification, 6 true/false, 11 multiple choice. Quick refresh has 15 questions. Covers data about data, metadata details, 5W + H, benefits, currency versus cost, collector versus owner, storage, and early planning through standard procedures and project budgets. Based only on the supplied metadata page and keynotes.
 
 Short terms use identification; lists and longer answers use multiple choice. No enumeration is added. Questions, notes, retries, and browser statistics stay separate. Next reveals each answer; total score appears only at the end.
+
+## Lesson 3 · Page 6: Finding GIS Data Online
+
+Separate 22-question bank: 5 identification, 6 true/false, 11 multiple choice. Quick refresh has 15 questions. Covers purpose, existing data/access, money/time costs, format compatibility and shapefile, time period/interval/geographic scale, data gaps, and the supplied public/proprietary comparison. Prices and permissions are described as dataset-dependent rather than absolute rules.
+
+Questions follow the instructor-style pattern and only the supplied keynotes. Short terms use identification; lists and longer answers use multiple choice. No enumeration is added. Notes, retries, and saved scores stay separate from earlier pages. Next reveals each answer; total score appears only at the end.
