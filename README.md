@@ -8,7 +8,7 @@ Keep all files together, then double-click `index.html` to open it in your brows
 
 ## Quiz flow
 
-1. Choose Quick refresh (15 questions: five of each type) or Full review (all 45).
+1. Choose Quick refresh (15 questions: five of each type) or Full review (30 questions: ten of each type).
 2. Select or type your answer.
 3. Click **Next** to reveal the correct answer and explanation. Your answer is locked for that question.
 4. Read the explanation, then click **Continue** for the next question.
@@ -35,6 +35,8 @@ The relative asset paths also work under a repository subpath. Uploading the sou
 
 ## Edit the questions
 
-The bank is in `questions.js`. It currently contains 15 multiple-choice, 15 true/false, and 15 fill-in-the-blank questions. Each question has a unique ID, topic, correct answer, and explanation. The UI counts assume 45 questions and 15 per type; update these labels and selection limits if you change the bank size.
+The bank is in `questions.js`. It contains 10 multiple-choice, 10 true/false, and 10 fill-in-the-blank questions focused on essential definitions, component roles, device classification, misconceptions, and application scenarios. Counting components and completing slogans are not included. Fill-in questions ask for meaningful GIS terms or categories. Each question has a unique ID, topic, correct answer, and explanation. Update the homepage counts and full-review radio value if you change the bank size; quick mode selects five questions per type.
+
+This revised bank uses separate browser statistics so scores from the old 45-question version are not mixed with the new 30-question review. Earlier stored statistics are left untouched.
 
 Content covers GIS meaning and importance, five components, hardware roles and categories, and the application examples in your supplied first-page notes. These are study questions, not a prediction of your teacher's exam.
