@@ -2,8 +2,8 @@
   'use strict';
   const bank = window.GIS_QUESTIONS;
   const $ = id => document.getElementById(id);
-  const labels = {mc: 'Multiple choice', tf: 'True or false', fill: 'Fill in the blank'};
-  const storageKey = 'gis-study-club-essential-v2';
+  const labels = {mc: 'Multiple choice', tf: 'True or false', fill: 'Identification'};
+  const storageKey = 'gis-study-club-instructor-v3';
   let round = [], index = 0, responses = [], revealed = false, mode = 'quick', retryPool = [];
   const normalize = value => String(value).normalize('NFKC').toLowerCase().trim().replace(/[’']/g, '').replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -39,7 +39,7 @@
     $('progress').max = round.length; $('progress').value = index + 1;
     $('type-label').textContent = labels[q.type]; $('topic-label').textContent = q.topic;
     $('question-text').textContent = q.prompt;
-    $('answer-hint').textContent = q.type === 'fill' ? 'Type the missing answer. Capitalization, punctuation, and extra spaces do not matter.' : q.type === 'tf' ? 'Decide whether the statement is true or false.' : 'Choose one answer, then click Next to check it.';
+    $('answer-hint').textContent = q.type === 'fill' ? 'Identify the term being described. Capitalization, punctuation, and extra spaces do not matter.' : q.type === 'tf' ? 'Decide whether the statement is true or false.' : 'Choose one answer, then click Next to check it.';
     $('answer-controls').innerHTML = q.type === 'fill'
       ? '<label class="sr-only" for="fill-answer">Your answer</label><input class="fill-input" id="fill-answer" type="text" placeholder="Type your answer here…" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="200" aria-labelledby="question-text" aria-describedby="answer-hint validation">'
       : `<fieldset class="answers" aria-labelledby="question-text"><legend class="sr-only">Choose an answer</legend>${q.options.map((option, i) => `<label class="answer-option"><input type="radio" name="answer" value="${i}" aria-describedby="validation"><span>${escape(option)}</span></label>`).join('')}</fieldset>`;

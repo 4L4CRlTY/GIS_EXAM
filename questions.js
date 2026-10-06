@@ -1,44 +1,47 @@
-/* Essential first-page Lesson 2 concepts. No counting or slogan-completion questions. */
+/* Lesson 2: instructor-pattern practice.
+ * 24 supplied review items + 6 additional multiple-choice practice items.
+ * Question 12's answer is supported by the earlier Monitoring lesson notes.
+ */
 (() => {
   const questions = [];
+  function identify(id, sourceQuestion, topic, prompt, answer, aliases, explanation) {
+    questions.push({id, type: 'fill', sourceQuestion, topic, prompt, answer, aliases, explanation});
+  }
+  function tf(id, sourceQuestion, topic, prompt, answer, explanation) {
+    questions.push({id, type: 'tf', sourceQuestion, topic, prompt, answer: answer ? 'True' : 'False', options: ['True', 'False'], explanation});
+  }
   function mc(id, topic, prompt, answer, distractors, explanation) {
-    questions.push({id, type: 'mc', topic, prompt, answer, options: [answer, ...distractors], explanation});
+    questions.push({id, type: 'mc', sourceQuestion: null, topic, prompt, answer, options: [answer, ...distractors], explanation});
   }
-  function tf(id, topic, prompt, answer, explanation) {
-    questions.push({id, type: 'tf', topic, prompt, answer: answer ? 'True' : 'False', options: ['True', 'False'], explanation});
-  }
-  function fill(id, topic, prompt, answer, aliases, explanation) {
-    questions.push({id, type: 'fill', topic, prompt, answer, aliases, explanation});
-  }
-  mc('m1','Meaning & importance','What does GIS stand for?','Geographic Information System',['Global Information Service','Geographic Input Software','General Information System'],'GIS connects information to places.');
-  mc('m2','The five components','What are the five main components of GIS?','Hardware, software, data, people, methods/applications',['GPS, cameras, probes, scanners, printers','Hardware, software, keyboards, monitors, printers','Maps, roads, rivers, lakes, forests'],'Remember: equipment, programs, information, users, and procedures.');
-  mc('m3','Meaning & importance','What does GIS do with data?','Organize, analyze, visualize, and share it',['Only collect and store it','Only draw and print maps','Only record coordinates'],'GIS helps us organize data, study it, show it visually, and share it.');
-  mc('m4','Meaning & importance','Why is knowing where an event happened important?','It helps us understand what happened and why',['It tells us everything about the event','It makes other data unnecessary','It only helps us print a map'],'Knowing where helps us understand what, when, how, and why something happened.');
-  mc('m5','Hardware & devices','What is the role of hardware in GIS?','Run software, store data, and let users work with data',['Set the procedures for a project','Provide the facts being studied','Act as the computer program'],'Hardware is the physical equipment, such as computers and other devices.');
-  mc('m6','Hardware & devices','GPS, cameras, and probes are used for what?','Data collection',['Data input','Data output','Data analysis and storage'],'These devices collect data.');
-  mc('m7','Hardware & devices','Which devices are used for data input?','Scanners and digitizers',['Cameras and probes','Printers and plotters','Computers and hard drives'],'Scanners and digitizers enter data into the system.');
-  mc('m8','Real-world applications','How can GIS help track a disease outbreak?','Show where disease cases occur',['Show only the total number of cases','List only the names of patients','Record only the dates of cases'],'Mapping case locations helps us see which areas are affected.');
-  mc('m9','Real-world applications','What locations are needed to find the nearest supermarket?','Your location and the supermarket locations',['Only your location','Only the supermarket locations','Only the supermarket addresses, without your location'],'GIS can compare distances when it knows both locations.');
-  mc('m10','Real-world applications','Which is an example of using GIS?','Tracking the path of a tornado',['Counting storms without their locations','Listing storm dates only','Recording wind speeds without locations'],'A tornado path shows where the tornado moved.');
-  tf('t1','Meaning & importance','GIS only makes maps; it cannot analyze data.',false,'GIS can organize, analyze, visualize, and share data.');
-  tf('t2','The five components','Hardware, software, and data are the only GIS components.',false,'People and methods/applications are also GIS components.');
-  tf('t3','The five components','A computer is hardware. Its programs are software.',true,'Hardware = equipment. Software = programs.');
-  tf('t4','The five components','Procedures belong to the data component of GIS.',false,'Procedures belong to methods/applications. Data means information.');
-  tf('t5','Hardware & devices','Scanners and digitizers are data input devices.',true,'They bring data into the system.');
-  tf('t6','Hardware & devices','Monitors, printers, and plotters are output devices.',true,'They display or produce results.');
-  tf('t7','Hardware & devices','Hard drives are data output devices.',false,'Hard drives belong to data analysis and storage.');
-  tf('t8','Meaning & importance','Location helps us understand our local environment and the world.',true,'Knowing where helps us understand events in different places.');
-  tf('t9','Real-world applications','The total number of disease cases tells us exactly where they occur.',false,'We need case locations to know which places are affected.');
-  tf('t10','Real-world applications','GIS can record where a new frog species was discovered.',true,'The discovery location is geographic information.');
-  fill('f1','Meaning & importance','GIS stands for ______. Write the full name.','Geographic Information System',['geographical information system'],'GIS connects information to locations.');
-  fill('f2','The five components','The physical equipment used in GIS is called ______.','Hardware',[],'Hardware includes computers and other physical devices.');
-  fill('f3','The five components','The computer programs used in GIS are called ______.','Software',['computer software'],'Software = programs. Hardware = equipment.');
-  fill('f4','The five components','The information used in GIS is its ______ component.','Data',[],'Data are the facts and information used by GIS.');
-  fill('f5','The five components','The users who work with GIS are its ______ component.','People',['users'],'People use the equipment, programs, and data.');
-  fill('f6','The five components','Procedures and uses belong to the ______ component of GIS.','Methods/applications',['methods','applications','methods and applications','methods or applications','methods applications'],'Methods/applications describe how GIS is used.');
-  fill('f7','Hardware & devices','GPS, cameras, and probes are used for data ______.','Collection',['data collection','collecting'],'They collect data from the real world.');
-  fill('f8','Hardware & devices','Scanners and digitizers are used for data ______.','Input',['data input'],'They enter data into the system.');
-  fill('f9','Hardware & devices','Printers, monitors, and plotters are used for data ______.','Output',['data output'],'They display or produce results.');
-  fill('f10','Hardware & devices','Computers and hard drives belong to data analysis and ______.','Storage',['data storage'],'Computers process data, and hard drives store it.');
+  identify('i1',1,'GIS functions','The GIS function that uses geographic information to support planning, decision-making, and resource allocation.','Management',[],'Management uses geographic information to help plan and make decisions.');
+  identify('i2',3,'GIS functions','The GIS function concerned with finding the exact position or geographic location of an object or phenomenon.','Mapping',[],'Your instructor uses Mapping for locating and showing geographic features.');
+  identify('i3',5,'GIS components','The GIS component that includes computers, GPS devices, scanners, cameras, and other physical equipment.','Hardware',[],'Hardware means physical equipment.');
+  identify('i4',7,'GIS applications','A GIS application that can identify flood-prone areas, landslide hazards, and other risks to support disaster preparedness and response.','Disaster Management',[],'The application is Disaster Management. GIS is the system used for this work.');
+  identify('i5',9,'GIS concepts','The GIS concept that uses geographic information to answer questions such as “Where is it?”, “What is nearby?”, “What pattern exists?”, and “What may happen?”','GIS as a Question-Answering Tool',['gis as a question answering tool','question answering tool','gis as question answering tool'],'Use the term from your instructor: GIS as a Question-Answering Tool. Modelling covers possible conditions, but this question includes several kinds of questions.');
+  identify('i6',10,'GIS components','The GIS component referring to the people who collect, manage, analyze, interpret, and use geographic information.','People',[],'People are the users who work with GIS.');
+  identify('i7',11,'GIS applications','A GIS application used to identify suitable locations for crops and analyze agricultural land.','Agriculture',[],'Agriculture uses GIS to study land and find suitable places for crops.');
+  identify('i8',12,'GIS functions','The GIS function that involves observing changes or conditions over time, such as changes in water level or land cover.','Monitoring',[],'Monitoring follows conditions and changes over time. This answer is supported by your lesson notes.');
+  identify('i9',16,'GIS applications','A GIS application used to plan routes, analyze traffic, and manage transportation networks.','Transportation',[],'The application is Transportation. Routing is a task within this application.');
+  identify('i10',17,'GIS components','The GIS component consisting of programs used to collect, process, analyze, and visualize geographic information.','Software',[],'Software means the programs used in GIS.');
+  identify('i11',19,'GIS functions','The GIS function used to determine distance, area, length, or other spatial quantities.','Measurement',[],'Measurement tells us how far, how long, or how large something is.');
+  identify('i12',20,'GIS concepts','A system that captures, stores, analyzes, manages, and displays information connected to locations on Earth.','Geographic Information System',['gis','geographical information system'],'Geographic Information System is the full name of GIS.');
+  identify('i13',22,'GIS functions','The GIS function that uses geographic data to represent or predict possible future conditions.','Modelling',['modeling'],'Modelling represents a system or explores what might happen.');
+  identify('i14',23,'GIS components','The GIS component referring to the procedures and techniques used to collect, process, analyze, and manage geographic information.','Methods',['methods/applications','methods and applications'],'Methods describe the procedures used in GIS work.');
+  identify('i15',24,'GIS components','The GIS component consisting of geographic information such as maps, satellite imagery, coordinates, and attribute information.','Data',[],'Data are the geographic information and related details used by GIS.');
+  tf('t1',2,'GIS components','Methods in GIS refer to the procedures and workflows used to collect, process, analyze, and manage geographic information.',true,'Methods describe how GIS work is carried out.');
+  tf('t2',4,'GIS concepts','GIS stands for Geographic Information System.',true,'GIS means Geographic Information System.');
+  tf('t3',6,'GIS concepts','GIS is used only for creating maps and cannot support analysis or decision-making.',false,'GIS also supports analysis and decision-making.');
+  tf('t4',8,'GIS components','Hardware refers to the physical devices used to operate and interact with a GIS.',true,'Computers, GPS devices, and scanners are hardware.');
+  tf('t5',13,'GIS components','The five major components of GIS include Hardware, Software, People, Methods, and Data.',true,'Learn the components and their roles, not just their number.');
+  tf('t6',14,'GIS components','GIS software is responsible only for storing files and cannot perform spatial analysis.',false,'GIS software can analyze geographic information as well as store it.');
+  tf('t7',15,'GIS components','People are not considered a component of a GIS because GIS is mainly computer-based.',false,'People are an essential GIS component.');
+  tf('t8',18,'GIS functions','Mapping is one of the GIS functions used to represent geographic information visually.',true,'Mapping shows geographic information in a visual form.');
+  tf('t9',21,'GIS components','GIS data can include geographic information represented by layers such as roads, buildings, and other features.',true,'GIS layers can represent different kinds of geographic features.');
+  mc('m1','GIS components','The GIS component that includes computers, scanners, and GPS devices.','Hardware',['Software','Data','Methods'],'These are physical devices, so they are hardware.');
+  mc('m2','GIS functions','The GIS function used to find the distance between two places.','Measurement',['Mapping','Monitoring','Management'],'Distance is a quantity, so the function is Measurement.');
+  mc('m3','GIS functions','The GIS function used to observe changes in land cover over time.','Monitoring',['Measurement','Modelling','Mapping'],'Observing change over time is Monitoring.');
+  mc('m4','GIS functions','The GIS function used to predict possible future conditions.','Modelling',['Monitoring','Measurement','Management'],'Modelling explores possible conditions; monitoring observes changes.');
+  mc('m5','GIS applications','The GIS application used to plan routes and study traffic.','Transportation',['Agriculture','Disaster Management','Public Health'],'Transportation is the application area. Routing is one of its tasks.');
+  mc('m6','GIS applications','The GIS application used to identify flood and landslide hazards.','Disaster Management',['Transportation','Agriculture','Real Estate'],'Disaster Management uses hazard information to support preparedness and response.');
   window.GIS_QUESTIONS = questions;
 })();
