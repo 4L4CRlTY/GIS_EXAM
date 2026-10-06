@@ -142,8 +142,8 @@
     $('quick-description').textContent = quickCount + (enums ? ' questions · includes all lists' : ' questions · 5 of each type');
     $('full-description').textContent = bank.length + ' questions · selected page only';
     $('bank-count').textContent = bank.length + ' questions · ' + (isPage2 ? 'Page 2' : 'Page 1');
-    $('page-description').textContent = isPage2 ? 'Page 2: Software, People, Methods, and Data. Questions stay separate from Page 1.' : 'Page 1: Your existing introduction, instructor examples, and hardware practice.';
-    $('study-label').textContent = isPage2 ? 'Page 2 · Components continued' : 'Page 1 · Existing practice';
+    $('page-description').textContent = isPage2 ? 'Page 2: Software, People, Methods, and Data. Questions stay separate from Page 1.' : 'Page 1: GIS basics, components, hardware categories, functions, and applications.';
+    $('study-label').textContent = isPage2 ? 'Page 2 · Software, People, Methods & Data' : 'Page 1 · GIS basics & applications';
     $('setup-note').textContent = enums ? 'All ' + enums + ' enumeration questions are included in each round. No timer.' : 'Identification, true or false, and multiple choice. No timer.';
     $('enumeration-format').hidden = !enums;
     $('study-topics').innerHTML = isPage2 ? '<p><span>01</span> Software & GUI</p><p><span>02</span> People</p><p><span>03</span> Methods</p><p><span>04</span> Data & sources</p>' : firstPageTopics;

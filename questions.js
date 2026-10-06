@@ -14,13 +14,13 @@
     questions.push({id, type: 'mc', sourceQuestion: null, topic, prompt, answer, options: [answer, ...distractors], explanation});
   }
   identify('i1',1,'GIS functions','The GIS function that uses geographic information to support planning, decision-making, and resource allocation.','Management',[],'Management uses geographic information to help plan and make decisions.');
-  identify('i2',3,'GIS functions','The GIS function concerned with finding the exact position or geographic location of an object or phenomenon.','Mapping',[],'Your instructor uses Mapping for locating and showing geographic features.');
+  identify('i2',3,'GIS functions','The GIS function concerned with finding the exact position or geographic location of an object or phenomenon.','Mapping',[],'Mapping shows where geographic features are located.');
   identify('i3',5,'GIS components','The GIS component that includes computers, GPS devices, scanners, cameras, and other physical equipment.','Hardware',[],'Hardware means physical equipment.');
   identify('i4',7,'GIS applications','A GIS application that can identify flood-prone areas, landslide hazards, and other risks to support disaster preparedness and response.','Disaster Management',[],'The application is Disaster Management. GIS is the system used for this work.');
-  identify('i5',9,'GIS concepts','The GIS concept that uses geographic information to answer questions such as “Where is it?”, “What is nearby?”, “What pattern exists?”, and “What may happen?”','GIS as a Question-Answering Tool',['gis as a question answering tool','question answering tool','gis as question answering tool'],'Use the term from your instructor: GIS as a Question-Answering Tool. Modelling covers possible conditions, but this question includes several kinds of questions.');
+  identify('i5',9,'GIS concepts','The GIS concept that uses geographic information to answer questions such as “Where is it?”, “What is nearby?”, “What pattern exists?”, and “What may happen?”','GIS as a Question-Answering Tool',['gis as a question answering tool','question answering tool','gis as question answering tool'],'GIS as a Question-Answering Tool covers location, nearby features, patterns, and possible conditions. Modelling covers only part of this broader role.');
   identify('i6',10,'GIS components','The GIS component referring to the people who collect, manage, analyze, interpret, and use geographic information.','People',[],'People are the users who work with GIS.');
   identify('i7',11,'GIS applications','A GIS application used to identify suitable locations for crops and analyze agricultural land.','Agriculture',[],'Agriculture uses GIS to study land and find suitable places for crops.');
-  identify('i8',12,'GIS functions','The GIS function that involves observing changes or conditions over time, such as changes in water level or land cover.','Monitoring',[],'Monitoring follows conditions and changes over time. This answer is supported by your lesson notes.');
+  identify('i8',12,'GIS functions','The GIS function that involves observing changes or conditions over time, such as changes in water level or land cover.','Monitoring',[],'Monitoring follows conditions and changes over time, such as changing water levels.');
   identify('i9',16,'GIS applications','A GIS application used to plan routes, analyze traffic, and manage transportation networks.','Transportation',[],'The application is Transportation. Routing is a task within this application.');
   identify('i10',17,'GIS components','The GIS component consisting of programs used to collect, process, analyze, and visualize geographic information.','Software',[],'Software means the programs used in GIS.');
   identify('i11',19,'GIS functions','The GIS function used to determine distance, area, length, or other spatial quantities.','Measurement',[],'Measurement tells us how far, how long, or how large something is.');
@@ -61,7 +61,7 @@
       {name: 'Data Output', aliases: ['output']},
       {name: 'Data Analysis and Storage', aliases: ['data analysis', 'analysis', 'analysis and storage', 'data analysis storage', 'analysis storage', 'data storage and analysis']}
     ],
-    explanation: 'Collection: GPS, cameras, probes. Input: scanners, digitizers. Output: printers, monitors, plotters. Analysis and storage: computers, hard drives. Data Analysis is accepted here; the complete category in your lesson is Data Analysis and Storage. All four different categories correct = one point.'
+    explanation: 'Collection: GPS, cameras, probes. Input: scanners, digitizers. Output: printers, monitors, plotters. Analysis and storage: computers, hard drives. Data Analysis is accepted here; the complete category name is Data Analysis and Storage. All four different categories correct = one point.'
   });
   window.GIS_QUESTIONS = questions;
 })();

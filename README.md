@@ -63,3 +63,7 @@ Four boxes ask for Data Collection, Data Input, Data Output, and Data Analysis a
 Page 1 preserves the existing 32-question instructor-style bank, including the components and hardware enumeration questions (17 in quick mode). It includes the earlier instructor examples, not only the first source page. Page 2 contains 32 questions based only on the supplied Components (continued) page: 12 identification, 10 true/false, and 10 multiple-choice questions (15 in quick mode). The banks never mix. Each page has its own stored results; Page 1 retains its previous storage key.
 
 Page 2 has no multiple-input or enumeration questions. Those will be added only when the user requests specific lists. The existing Page 1 component and hardware-category enumeration questions remain available. Page 2 identification uses one answer box; aliases such as GUI and DBMS are supported where appropriate.
+
+## Self-contained wording
+
+Questions and answer explanations name the GIS concept directly, without requiring a textbook page or illustration. Topic labels explain what each separate quiz covers. Data questions focus on its role as the information used by GIS rather than assuming a universal ranking of component importance.
