@@ -3,7 +3,7 @@
   const bank = window.GIS_QUESTIONS;
   const $ = id => document.getElementById(id);
   const labels = {mc: 'Multiple choice', tf: 'True or false', fill: 'Identification', enum: 'Enumeration'};
-  const storageKey = 'gis-study-club-enumeration-v4';
+  const storageKey = 'gis-study-club-hardware-enumeration-v5';
   let round = [], index = 0, responses = [], revealed = false, mode = 'quick', retryPool = [];
   const {normalize, checkEnumeration} = window.GIS_QUIZ_UTILS;
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -41,12 +41,12 @@
     $('question-text').textContent = q.prompt;
     $('answer-hint').textContent = q.type === 'fill' ? 'Identify the term being described. Capitalization, punctuation, and extra spaces do not matter.' : q.type === 'tf' ? 'Decide whether the statement is true or false.' : 'Choose one answer, then click Next to check it.';
     $('answer-controls').innerHTML = q.type === 'enum'
-      ? `<fieldset class="answers" aria-labelledby="question-text"><legend class="sr-only">Enter the five GIS components</legend>${q.terms.map((term, i) => `<div class="enum-field"><label for="component-${i}">Component ${i + 1}</label><input class="fill-input enum-input" id="component-${i}" type="text" placeholder="Type one component" autocomplete="off" spellcheck="false" maxlength="100" aria-describedby="answer-hint component-status-${i} validation"><span id="component-status-${i}" class="component-status"></span></div>`).join('')}</fieldset>`
+      ? `<fieldset class="answers" aria-labelledby="question-text"><legend class="sr-only">Enter ${q.terms.length} answers</legend>${q.terms.map((term, i) => `<div class="enum-field"><label for="component-${i}">${escape(q.entryLabel)} ${i + 1}</label><input class="fill-input enum-input" id="component-${i}" type="text" placeholder="Type one ${escape(q.entryLabel.toLowerCase())}" autocomplete="off" spellcheck="false" maxlength="100" aria-describedby="answer-hint component-status-${i} validation"><span id="component-status-${i}" class="component-status"></span></div>`).join('')}</fieldset>`
       : q.type === 'fill'
       ? '<label class="sr-only" for="fill-answer">Your answer</label><input class="fill-input" id="fill-answer" type="text" placeholder="Type your answer here…" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="200" aria-labelledby="question-text" aria-describedby="answer-hint validation">'
       : `<fieldset class="answers" aria-labelledby="question-text"><legend class="sr-only">Choose an answer</legend>${q.options.map((option, i) => `<label class="answer-option"><input type="radio" name="answer" value="${i}" aria-describedby="validation"><span>${escape(option)}</span></label>`).join('')}</fieldset>`;
     if (q.type === 'enum') {
-      $('answer-hint').textContent = 'Type one component per box, in any order. No repeated answers. All five correct = one point. You may leave unknown answers blank.';
+      $('answer-hint').textContent = `Type one ${q.entryLabel.toLowerCase()} per box, in any order. No repeated answers. All ${q.terms.length} correct = one point. You may leave unknown answers blank.`;
     }
     $('validation').textContent = ''; $('feedback').hidden = true; $('feedback').innerHTML = '';
     $('next').textContent = 'Next →'; $('action-hint').textContent = 'Take your time. Think it through.';
@@ -64,7 +64,7 @@
     const entries = q.type === 'enum' ? [...document.querySelectorAll('.enum-input')].map(input => input.value.trim()) : null;
     const value = entries ? entries.map((entry, i) => `${i + 1}. ${entry || '(blank)'}`).join('; ') : q.type === 'fill' ? $('fill-answer').value.trim() : selected ? q.options[Number(selected.value)] : '';
     if (entries && entries.every(entry => !normalize(entry))) {
-      $('validation').textContent = 'Type at least one component first. Sulayi lang!';
+      $('validation').textContent = `Type at least one ${q.entryLabel.toLowerCase()} first. Sulayi lang!`;
       $('component-0').focus();
       return;
     }
@@ -88,11 +88,11 @@
     $('feedback').innerHTML = `<strong>${correct ? '✓ Sakto! You got it.' : '↺ Not quite. Here’s the idea.'}</strong><p>Correct answer: <b>${escape(q.answer)}</b></p><p class="explanation">${escape(q.explanation)}</p>`;
     if (enumeration) {
       enumeration.items.forEach((item, i) => {
-        const status = {correct: '✓ Correct', duplicate: '↺ Repeated component', incorrect: '✗ Not a GIS component', blank: '— No answer'}[item.status];
+        const status = {correct: '✓ Correct', duplicate: `↺ Repeated ${q.entryLabel.toLowerCase()}`, incorrect: '✗ Incorrect answer', blank: '— No answer'}[item.status];
         $('component-status-' + i).textContent = status;
         $('component-' + i).classList.add(item.status === 'correct' ? 'enum-correct' : 'enum-wrong');
       });
-      $('feedback').innerHTML += enumeration.missing.length ? `<p><b>Missing components:</b> ${escape(enumeration.missing.join(', '))}</p>` : '';
+      $('feedback').innerHTML += enumeration.missing.length ? `<p><b>Missing ${q.entryLabel === 'Category' ? 'categories' : 'components'}:</b> ${escape(enumeration.missing.join(', '))}</p>` : '';
     }
     $('feedback').hidden = false;
     $('next').textContent = index === round.length - 1 ? 'See my results →' : 'Continue →';

@@ -44,12 +44,24 @@
   mc('m5','GIS applications','The GIS application used to plan routes and study traffic.','Transportation',['Agriculture','Disaster Management','Public Health'],'Transportation is the application area. Routing is one of its tasks.');
   mc('m6','GIS applications','The GIS application used to identify flood and landslide hazards.','Disaster Management',['Transportation','Agriculture','Real Estate'],'Disaster Management uses hazard information to support preparedness and response.');
   questions.push({
-    id: 'e1', type: 'enum', sourceQuestion: null, topic: 'GIS components',
+    id: 'e1', type: 'enum', sourceQuestion: null, topic: 'GIS components', entryLabel: 'Component',
     prompt: 'What are the five main components of GIS?',
     answer: 'Hardware, Software, People, Data, Methods',
     terms: [{name: 'Hardware'}, {name: 'Software'}, {name: 'People'}, {name: 'Data'},
       {name: 'Methods', aliases: ['method', 'applications', 'methods/applications', 'methods and applications', 'methods or applications']}],
     explanation: 'Hardware = equipment; software = programs; people = users; data = information; methods = procedures. Any order is accepted. This question earns one point when all five different components are correct.'
+  });
+  questions.push({
+    id: 'e2', type: 'enum', sourceQuestion: null, topic: 'Hardware categories', entryLabel: 'Category',
+    prompt: 'What are the four categories of GIS hardware?',
+    answer: 'Data Collection, Data Input, Data Output, Data Analysis and Storage',
+    terms: [
+      {name: 'Data Collection', aliases: ['collection']},
+      {name: 'Data Input', aliases: ['input']},
+      {name: 'Data Output', aliases: ['output']},
+      {name: 'Data Analysis and Storage', aliases: ['data analysis', 'analysis', 'analysis and storage', 'data analysis storage', 'analysis storage', 'data storage and analysis']}
+    ],
+    explanation: 'Collection: GPS, cameras, probes. Input: scanners, digitizers. Output: printers, monitors, plotters. Analysis and storage: computers, hard drives. Data Analysis is accepted here; the complete category in your lesson is Data Analysis and Storage. All four different categories correct = one point.'
   });
   window.GIS_QUESTIONS = questions;
 })();

@@ -8,7 +8,7 @@ Keep all files together, then double-click `index.html` to open it in your brows
 
 ## Quiz flow
 
-1. Choose Quick refresh (16 questions: five of each original type plus enumeration) or Full review (31 questions: 15 identification, 9 true/false, 6 multiple choice, and 1 enumeration).
+1. Choose Quick refresh (17 questions: five of each original type plus both enumeration questions) or Full review (32 questions: 15 identification, 9 true/false, 6 multiple choice, and 2 enumeration).
 2. Select or type your answer.
 3. Click **Next** to reveal the correct answer and explanation. Your answer is locked for that question.
 4. Read the explanation, then click **Continue** for the next question.
@@ -46,10 +46,14 @@ The bank in `questions.js` follows the instructor's pattern: a short definition 
 - Routing is not accepted for Transportation, and GIS is not accepted for Disaster Management: the question asks for an application area.
 - Correctness feedback is based on the answer key, not the inconsistent “Incorrect” wording shown under some correctly answered false statements in the reference images.
 
-Each question has a unique ID, topic, answer, and explanation. Quick mode selects five of each original type and always includes the five-component enumeration question. Update the homepage counts and full-review radio value if changing the bank size.
+Each question has a unique ID, topic, answer, and explanation. Quick mode selects five of each original type and always includes both enumeration questions. Update the homepage counts and full-review radio value if changing the bank size.
 
 This bank uses separate browser statistics, leaving earlier versions' records untouched. These are practice questions based on supplied material, not a prediction of a future exam.
 
 ## Five-component enumeration
 
 Enter Hardware, Software, People, Data, and Methods in five separate boxes, in any order. Methods/applications and Applications are also accepted for Methods. Case, punctuation, and extra spaces are ignored. Repeated components do not count twice. At least one answer is required; unknown answers may be left blank. Clicking Next locks all boxes, labels each answer, and shows the full correct list and any missing components. All five different components must be correct to earn the question's one point (no partial points). The total score still appears only at the end. Mistake practice includes this question if incomplete or incorrect. This version keeps separate statistics so earlier scores remain untouched.
+
+## Hardware-category enumeration
+
+Four boxes ask for Data Collection, Data Input, Data Output, and Data Analysis and Storage. Any order is accepted. Data Analysis (or Analysis) is also accepted, but feedback teaches the full lesson term, Data Analysis and Storage. Short forms Collection, Input, and Output are accepted. Duplicate aliases cannot earn credit twice. The question earns one point only when all four different categories are correct. It appears in quick and full review, and mistake practice when missed. The answer feedback includes example devices for each category.
